@@ -1,0 +1,383 @@
+{% extends "Welcome.html" %}
+{% load static %}
+{% block POS %}
+<div class="tablet-pos-screens">
+    <div class="row tab-pos-row">
+        <div class="col-12">
+            <div class="row mt-2">
+                <div class="col-7 d-flex justify-content-center align-items-center flex-column">
+                    <h2 class="text-white">DOVER STATION</h2>
+                    <h6 class="text-white">
+                        <span class="pos-status-dot"></span>
+                        Online (After Transaction)
+                    </h6>
+                    <h6 class="text-white">v 3.4.44-05</h6>
+                    <h6 class="text-white">Feb 05 2024, 09:36:26 AM</h6>
+                    <h6 class="text-white">*****25669</h6>
+                </div>
+                <div class="col-5 d-flex justify-content-center align-items-center">
+                    <div class="pos-s1-img">
+                        <img src="{% static 'img/gts-logo.png' %}" alt="" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-10 m-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>Categories</h6>
+                                </div>
+                            </div>
+                            <div class="row m-auto">
+                                <div class="col-4 d-flex justify-content-center align-items-center flex-column">
+                                    <div class="card" style="background-color: #e4f6f9;width: 100%;">
+                                        <div class="card-body text-center">
+                                            <img src="{% static 'img/fuel.png' %}" alt="" style="width: 80px;">
+                                            <h6 class="text-center">Fuels</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center align-items-center flex-column">
+                                    <div class="card" style="background-color: #fedadc;width: 100%;">
+                                        <div class="card-body text-center">
+                                            <img src="{% static 'img/service.png' %}" alt="" style="width: 80px;">
+                                            <h6 class="text-center">Service</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center align-items-center flex-column">
+                                    <div class="card" style="background-color: #fbecd5;width: 100%;">
+                                        <div class="card-body text-center">
+                                            <img src="{% static 'img/shop.png' %}" alt="" style="width: 80px;">
+                                            <h6 class="text-center">Shop</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>Manage</h6>
+                                </div>
+                            </div>
+                            <div class="row m-auto">
+                                <div class="col-6 d-flex justify-content-center align-items-center flex-column">
+                                    <div class="card" style="background-color: #fde9d8;width: 100%;">
+                                        <div class="card-body text-center">
+                                            <img src="{% static 'img/settings.png' %}" alt="" style="width: 80px;">
+                                            <h6 class="text-center">Settings</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 d-flex justify-content-center align-items-center flex-column">
+                                    <div class="card" style="background-color: #fedada;width: 100%;">
+                                        <div class="card-body text-center">
+                                            <img src="{% static 'img/telecollect.png' %}" alt="" style="width: 80px;">
+                                            <h6 class="text-center">Telecollect</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 mb-4">
+                <div class="col-10 m-auto">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="tablet-total-img" src="{% static 'img/total.png' %}" alt="">
+                                    <p class="tablet-total-trans">000</p>
+                                    <p class="tablet-total-amount">AMT. <span class="amount-num">0</span> EGP</p>
+                                    <p class="tablet-total-name">Total Transactions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img class="tablet-recharge-img" src="{% static 'img/recharge.png' %}" alt="">
+                                    <p class="tablet-recharge-trans">000</p>
+                                    <p class="tablet-recharge-amount">AMT. <span class="amount-num">0</span> EGP</p>
+                                    <p class="tablet-recharge-name">Total Recharges</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-none" data-toggle="modal" data-target="#exampleModal">
+        <div class="col-12">
+            <div class="row mt-2">
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-arrow-left" style="font-size: 30px;"></i>
+                </div>
+                <div class="col-8 d-flex justify-content-center align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">AVAILABLE TRANSACTIONS</label>
+                </div>
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-arrow-rotate-right" style="font-size: 30px;"></i>
+                </div>
+            </div>
+            <div class="row mt-4" style="background-color: #f2f2f2;border-radius: 5px;margin: 5px;">
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <img class="tablet-ps2-gas-img" src="{% static 'img/pos-screen2-gas.png' %}" alt="">
+                </div>
+                <div class="col-10 p-2">
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h5 class="m-0">92</h4>
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4 d-flex justify-content-center align-items-center">
+                            <h5 class="m-0">EGP 337.05</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h6 class="m-0" style="color: #7b7b7b;"><i class="fa-solid fa-gas-pump me-2"></i> PUMP 1
+                            </h6>
+                        </div>
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h6 class="m-0" style="color: #7b7b7b;"><i class="fa-solid fa-droplet me-2"></i>
+                                QTY:29.96LTR</h6>
+                        </div>
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h6 class="m-0" style="color: #7b7b7b;"><i class="fa-solid fa-oil-can me-2"></i> NOZZLE: 1
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h6 class="m-0" style="color: #7b7b7b;"><i class="fa-solid fa-calendar-days me-2"></i>
+                                2024-02-05</h6>
+                        </div>
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h6 class="m-0" style="color: #7b7b7b;"><i class="fa-solid fa-clock me-2"></i> 09:34:10</h6>
+                        </div>
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h6 class="m-0" style="color: #7b7b7b;"><i class="fa-solid fa-receipt me-2"></i> SEQ:295
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-start align-items-center">
+                            <h6 class="m-0" style="color: #7b7b7b;"><i class="fa-solid fa-receipt me-2"></i> sale ID:358
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Validate your transaction:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Product: 92</h5>
+                    <h5>Volume: 29.96</h5>
+                    <h5>Amount: 337.05</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-success">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-none">
+        <div class="col-12">
+            <div class="row mt-2">
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-arrow-left" style="font-size: 30px;"></i>
+                </div>
+                <div class="col-8 d-flex justify-content-center align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">MODE OF PAYMENT</label>
+                </div>
+            </div>
+            <div class="row mt-2" style="background-color: #f2f2f2;border-radius: 5px;margin: auto;width: 80%;">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <img class="tablet-ps2-gas-img" src="{% static 'img/fleet.png' %}" alt="">
+                </div>
+                <div class="col-8 p-2 d-flex justify-content-start align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">Fleet Card</label>
+                </div>
+            </div>
+            <div class="row mt-2" style="background-color: #f2f2f2;border-radius: 5px;margin: auto;width: 80%;">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <img class="tablet-ps2-gas-img" src="{% static 'img/bank.png' %}" alt="">
+                </div>
+                <div class="col-8 p-2 d-flex justify-content-start align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">Bank Card</label>
+                </div>
+            </div>
+            <div class="row mt-2" style="background-color: #f2f2f2;border-radius: 5px;margin: auto;width: 80%;">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <img class="tablet-ps2-gas-img" src="{% static 'img/cash.png' %}" alt="">
+                </div>
+                <div class="col-8 p-2 d-flex justify-content-start align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">Cash</label>
+                </div>
+            </div>
+            <div class="row mt-2" style="background-color: #f2f2f2;border-radius: 5px;margin: auto;width: 80%;">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <img class="tablet-ps2-gas-img" src="{% static 'img/cash.png' %}" alt="">
+                </div>
+                <div class="col-8 p-2 d-flex justify-content-start align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">Visa/Master Card</label>
+                </div>
+            </div>
+            <div class="row mt-2" style="background-color: #f2f2f2;border-radius: 5px;margin: auto;width: 80%;">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <img class="tablet-ps2-gas-img" src="{% static 'img/cash.png' %}" alt="">
+                </div>
+                <div class="col-8 p-2 d-flex justify-content-start align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">QR Payment</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-none">
+        <div class="col-12">
+            <div class="row mt-2">
+                <div class="col-2 d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-arrow-left" style="font-size: 30px;"></i>
+                </div>
+                <div class="col-8 d-flex justify-content-center align-items-center">
+                    <label style="font-size: 30px;font-weight: bold;">Ticket</label>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                    <label style="font-size: 14px;font-weight: bold;">Client Receipt</label>
+                </div>
+            </div>
+            <div class="row mt-1 m-auto">
+                <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                    <img src="{% static 'img/gts-logo.png' %}" alt="" style="width: 100px;">
+                </div>
+            </div>
+            <div class="row mt-1 m-auto">
+                <div class="col-lg-12 text-center">
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">GTS</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">Dover Station</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">Egypt, Cairo</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">05/02/2024 09:45:59</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">Receipt No.:: TRX156691707119169</p>
+                </div>
+            </div>
+            <div class="row m-auto">
+                <div class="col-lg-12 text-center">
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Trans Seq No:</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">297</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Pump No</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">4</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Product Name</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">95</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Payment Type</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Cash</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Transaction By:</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">H</p>
+                        </div>
+                    </div>
+                    <hr style="margin: auto;width: 50%;">
+                </div>
+            </div>
+            <div class="row m-auto">
+                <div class="col-lg-12 text-center">
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Volume</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">9.69L</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Price</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">14.25</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">TIN</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">123456</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Amount</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">138.08</p>
+                        </div>
+                    </div>
+                    <div class="row m-auto w-50">
+                        <div class="col-8 d-flex justify-content-start align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">Total Paid:</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <p class="m-0" style="font-size: 14px;font-weight: bold;">138.08EGP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 m-auto">
+                <div class="col-12 text-center">
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">****************************</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">Energy is our future</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">Save it!</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">See you soon</p>
+                    <p class="m-0" style="font-size: 14px;font-weight: bold;">****************************</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

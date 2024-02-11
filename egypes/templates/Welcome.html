@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block Welcome %}
+{% include "loader.html" %}
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-lg order-0 order-lg-0 me-2 me-lg-0" aria-label="sidebar-menu" id="sidebarToggle"
+        href="#!"><i class="fas fa-bars"></i></button>
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="/tablet/">
+        <img src="{% static 'img/gts-logo.png' %}" width="70%" height="100%" alt="GTS Logo" style="width:70%;">
+    </a>
+    {% if '/tablet/Nozzles/' in request.path %}
+    <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label style="margin: 0px 20px 0px 0px;">Page: <span style="font-size: 25px;">Nozzles</span></label>
+    </div>
+    {% elif '/tablet/POS/' in request.path %}
+    <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label style="margin: 0px 20px 0px 0px;">Page: <span style="font-size: 25px;">POS</span></label>
+    </div>
+    {% elif '/tablet/Prices/' in request.path %}
+    <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label style="margin: 0px 20px 0px 0px;">Page: <span style="font-size: 25px;">Prices</span></label>
+    </div>
+    {% elif '/tablet/Tanks/' in request.path %}
+    <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label style="margin: 0px 20px 0px 0px;">Page: <span style="font-size: 25px;">Tanks</span></label>
+    </div>
+    {% elif '/tablet/Wetstock/' in request.path %}
+    <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label style="margin: 0px 20px 0px 0px;">Page: <span style="font-size: 25px;">Wetstock</span></label>
+    </div>
+    {% elif '/tablet/Ads/' in request.path %}
+    <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label style="margin: 0px 20px 0px 0px;">Page: <span style="font-size: 25px;">Ads</span></label>
+    </div>
+    {% else %}
+    <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label style="margin: 0px 20px 0px 0px;">Page: <span style="font-size: 25px;">X</span></label>
+    </div>
+    {% endif %}
+    <!-- <div class="navbar-text" style="position: absolute;right: 20px; color: white;">
+        <label class="user-mobile" style="margin: 0px 20px 0px 0px;">WELCOME <i class="fas fa-user me-1 ml-2"></i>GTS</label>
+    </div> -->
+</nav>
+<div id="layoutSidenav">
+    {% include "sidebar.html" %}
+    <div id="layoutSidenav_content">
+        {% block Nozzles %}
+        {% endblock %}
+        {% block POS %}
+        {% endblock %}
+        {% block Prices %}
+        {% endblock %}
+        {% block Tanks %}
+        {% endblock %}
+        {% block Wetstock %}
+        {% endblock %}
+        {% block Ads %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

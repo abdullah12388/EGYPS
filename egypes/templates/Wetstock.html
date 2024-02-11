@@ -1,0 +1,103 @@
+{% extends "Welcome.html" %}
+{% load static %}
+{% block Wetstock %}
+<div class="row tablet-wetstock">
+    <div class="col-12">
+        <div class="popup0">
+            <div class="popup-group-1" onclick="greenFocus()" style="cursor: pointer;">
+                <span class="popup-group-1-index"></span>
+                <label class="m-0">Leaks</label>
+            </div>
+            <div class="popup-group-2" onclick="blueFocus()" style="cursor: pointer;">
+                <span class="popup-group-2-index"></span>
+                <label class="m-0">Actual Losses</label>
+            </div>
+            <div class="popup-group-3" onclick="grayFocus()" style="cursor: pointer;">
+                <span class="popup-group-3-index"></span>
+                <label class="m-0">Preceived Losses</label>
+            </div>
+        </div>
+        <div id="popup1" class="popup1 d-flex justify-content-center align-items-center p-2">
+            <span class="popup1-leg"></span>
+            <span class="popup1-leg-end"></span>
+            <label class="popup-text">Pump Tests Not Recorded</label>
+        </div>
+        <div id="popup2" class="popup2 d-flex justify-content-center align-items-center p-2">
+            <span class="popup2-leg"></span>
+            <span class="popup2-leg-end"></span>
+            <label class="popup-text">Missing Sales Data</label>
+        </div>
+        <div id="popup3" class="popup3 d-flex justify-content-center align-items-center p-2">
+            <span class="popup3-leg"></span>
+            <span class="popup3-leg-end"></span>
+            <label class="popup-text">Drainback</label>
+        </div>
+        <div id="popup4" class="popup4 d-flex justify-content-center align-items-center p-2">
+            <span class="popup4-leg"></span>
+            <span class="popup4-leg-end"></span>
+            <label class="popup-text">Line Leaks</label>
+        </div>
+        <div id="popup5" class="popup5 d-flex justify-content-center align-items-center p-2">
+            <span class="popup5-leg"></span>
+            <span class="popup5-leg-end"></span>
+            <label class="popup-text">Delivery Theft</label>
+        </div>
+        <div id="popup6" class="popup6 d-flex justify-content-center align-items-center p-2">
+            <span class="popup6-leg"></span>
+            <span class="popup6-leg-end"></span>
+            <label class="popup-text">Offset Fill Leaks</label>
+        </div>
+        <div id="popup7" class="popup7 d-flex justify-content-center align-items-center p-2">
+            <span class="popup7-leg"></span>
+            <span class="popup7-leg-end"></span>
+            <label class="popup-text">Fill Line Leaks</label>
+        </div>
+        <div id="popup8" class="popup8 d-flex justify-content-center align-items-center p-2">
+            <span class="popup8-leg"></span>
+            <span class="popup8-leg-end"></span>
+            <label class="popup-text">Temperature /Evaporation</label>
+        </div>
+        <div id="popup9" class="popup9 d-flex justify-content-center align-items-center p-2">
+            <span class="popup9-leg"></span>
+            <span class="popup9-leg-end"></span>
+            <label class="popup-text">Theft From Tanks</label>
+        </div>
+        <div id="popup10" class="popup10 d-flex justify-content-center align-items-center p-2">
+            <span class="popup10-leg"></span>
+            <span class="popup10-leg-end"></span>
+            <label class="popup-text">Tank Leaks</label>
+        </div>
+        <div id="popup11" class="popup11 d-flex justify-content-center align-items-center p-2">
+            <span class="popup11-leg"></span>
+            <span class="popup11-leg-end"></span>
+            <label class="popup-text">Wrong Delivery Volume</label>
+        </div>
+        <div id="popup12" class="popup12 d-flex justify-content-center align-items-center p-2">
+            <span class="popup12-leg"></span>
+            <span class="popup12-leg-end"></span>
+            <label class="popup-text">Tank Calibration</label>
+        </div>
+        <div id="popup13" class="popup13 d-flex justify-content-center align-items-center p-2">
+            <span class="popup13-leg"></span>
+            <span class="popup13-leg-end"></span>
+            <label class="popup-text">Water Ingress</label>
+        </div>
+        <div id="popup14" class="popup14 d-flex justify-content-center align-items-center p-2">
+            <span class="popup14-leg"></span>
+            <span class="popup14-leg-end"></span>
+            <label class="popup-text">Pump Leaks</label>
+        </div>
+        <div id="popup15" class="popup15 d-flex justify-content-center align-items-center p-2">
+            <span class="popup15-leg"></span>
+            <span class="popup15-leg-end"></span>
+            <label class="popup-text">Meter Drift</label>
+        </div>
+        <div id="popup16" class="popup16 d-flex justify-content-center align-items-center p-2">
+            <span class="popup16-leg"></span>
+            <span class="popup16-leg-end"></span>
+            <label class="popup-text">Theft/Fraud At Pump</label>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'js/Wetstock.js' %}"></script>
+{% endblock %}

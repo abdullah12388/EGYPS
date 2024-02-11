@@ -1,0 +1,68 @@
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">View</div>
+                {% if '/tablet/Nozzles/' in request.path %}
+                <a class="nav-link active" href="/tablet/Nozzles/">
+                {% else %}
+                <a class="nav-link" href="/tablet/Nozzles/">
+                {% endif %}
+                <!-- <a class="nav-link active" href="/tank/dashboard/"> -->
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-gas-pump me-1"></i></div>
+                    Nozzles
+                </a>
+
+                {% if '/tablet/POS/' in request.path %}
+                <a class="nav-link active" href="/tablet/POS/">
+                {% else %}
+                <a class="nav-link" href="/tablet/POS/">
+                {% endif %}
+                <!-- <a class="nav-link active" href="/tank/dashboard/"> -->
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-mobile-screen me-2"></i></div>
+                    POS
+                </a>
+
+                {% if '/tablet/Prices/' in request.path %}
+                <a class="nav-link active" href="/tablet/Prices/">
+                {% else %}
+                <a class="nav-link" href="/tablet/Prices/">
+                {% endif %}
+                <!-- <a class="nav-link active" href="/tank/dashboard/"> -->
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-hand-holding-dollar me-1"></i></div>
+                    Prices
+                </a>
+
+                {% if '/tablet/Tanks/' in request.path %}
+                <a class="nav-link active" href="/tablet/Tanks/">
+                {% else %}
+                <a class="nav-link" href="/tablet/Tanks/">
+                {% endif %}
+                <!-- <a class="nav-link active" href="/tank/dashboard/"> -->
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-suitcase me-1"></i></div>
+                    Tanks
+                </a>
+
+                {% if '/tablet/Wetstock/' in request.path %}
+                <a class="nav-link active" href="/tablet/Wetstock/">
+                {% else %}
+                <a class="nav-link" href="/tablet/Wetstock/">
+                {% endif %}
+                <!-- <a class="nav-link active" href="/tank/dashboard/"> -->
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-network-wired me-1"></i></div>
+                    Wetstock
+                </a>
+
+                {% if '/tablet/Ads/' in request.path %}
+                <a class="nav-link active" href="/tablet/Ads/">
+                {% else %}
+                <a class="nav-link" href="/tablet/Ads/">
+                {% endif %}
+                <!-- <a class="nav-link active" href="/tank/dashboard/"> -->
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-headset me-1"></i></div>
+                    Ads
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>

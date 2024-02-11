@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% load static %}
+
+    <head>
+        {% include "head.html" %}
+    </head>
+    <body class="sb-nav-fixed">
+        {{ room_name|json_script:"room-name" }}
+        {% block Home %}
+        {% endblock %}
+        {% block Welcome %}
+        {% endblock %}
+        {% include "scripts.html" %}
+    </body>
+</html>

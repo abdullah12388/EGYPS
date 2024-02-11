@@ -1,0 +1,575 @@
+{% extends "base.html" %}
+{% load static %}
+{% block Home %}
+<div class="container-fluid station" id="main_station">
+    <img class="ads-object" src="{% static 'img/ads-object.png' %}" alt="">
+    <div class="ads-popup text-center">
+        <span class="ads-popup-leg"></span>
+        <div class="row m-auto">
+            <div class="col-lg-12 p-0">
+                <video class="ads-video" src="{% static 'video/ads.mp4'%}" poster="{% static 'img/ads.jpg'%}" loop
+                    autoplay muted playsinline></video>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-5 d-flex justify-content-start align-items-center">
+                <h5 class="dispenser-total">Total</h5>
+            </div>
+            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
+                <h5 class="dispenser-total-price">00.00</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-5 d-flex justify-content-start align-items-center">
+                <h5 class="dispenser-volume">Liters</h5>
+            </div>
+            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
+                <h5 id="amount_volume" class="dispenser-volume-price">00.00</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-5 d-flex justify-content-start align-items-center">
+                <h5 class="dispenser-unit">Unit</h5>
+            </div>
+            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
+                <h5 id="unit_price" class="dispenser-unit-price">00.00</h5>
+            </div>
+        </div>
+    </div>
+    <div class="nozzile1-popup text-center">
+        <img class="w-100" src="{% static 'img/nozzle.png' %}" alt="">
+    </div>
+    <div class="dispenser-popup">
+        <span class="dispenser-popup-leg"></span>
+        <div class="row m-2">
+            <div class="col-lg-5 d-flex justify-content-start align-items-center">
+                <h5 class="dispenser-total">Total</h5>
+            </div>
+            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
+                <h5 class="dispenser-total-price">00.00</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-5 d-flex justify-content-start align-items-center">
+                <h5 class="dispenser-volume">Liters</h5>
+            </div>
+            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
+                <h5 id="amount_volume" class="dispenser-volume-price">00.00</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-5 d-flex justify-content-start align-items-center">
+                <h5 class="dispenser-unit">Unit</h5>
+            </div>
+            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
+                <h5 id="unit_price" class="dispenser-unit-price">00.00</h5>
+            </div>
+        </div>
+    </div>
+    <div class="nozzile2-popup text-center">
+        <img class="w-100" src="{% static 'img/nozzle.png' %}" alt="">
+    </div>
+    <div class="price-sign-popup">
+        <span class="price-sign-popup-leg"></span>
+        <div class="row m-2">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h5 class="gas-type">Gas 95</h5>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
+                <h5 id="gas95" class="gas-price">{{gas95}}</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h5 class="gas-type">Gas 92</h5>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
+                <h5 id="gas92" class="gas-price">{{gas92}}</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h5 class="gas-type">Diesel</h5>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
+                <h5 id="diesel" class="gas-price">{{diesel}}</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h5 class="gas-type">CNG</h5>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
+                <h5 id="cng" class="gas-price">{{cng}}</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="tank1-popup">
+        <span class="tank1-popup-leg"></span>
+        <div class="row m-2">
+            <div class="col-lg-12 d-flex justify-content-center align-items-center bg-white p-2">
+                <h5 id="tank95_amount" class="tank1-amount">{{amount95}}</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-12 p-0 progress">
+                <div id="tank95_progress" class="progress-bar progress-bar-striped bg-success flex-row" role="progressbar"
+                    aria-valuenow="{{precentage95}}" aria-valuemin="0" aria-valuemax="100" style="width: {{precentage95}}%">{{precentage95}}%</div>
+            </div>
+        </div>
+    </div>
+    <div class="tank2-popup">
+        <span class="tank2-popup-leg"></span>
+        <div class="row m-2">
+            <div class="col-lg-12 d-flex justify-content-center align-items-center bg-white p-2">
+                <h5 id="tank92_amount" class="tank2-amount">{{amount92}}</h5>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-lg-12 p-0 progress">
+                <div id="tank92_progress" class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="{{precentage92}}"
+                    aria-valuemin="0" aria-valuemax="100" style="width: {{precentage92}}%">{{precentage92}}%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pos-popup">
+        <span class="pos-popup-leg"></span>
+        <!-- <img class="pos-frame d-none" src="{% static 'img/pos.png' %}" alt=""> -->
+        <div class="pos-screens">
+            <div class="pos-screen">
+                <div class="row m-auto mt-2">
+                    <div class="col-lg-7">
+                        <label class="data-lbl st-name">DOVER STATION</label>
+                        <label class="data-lbl st-status"><span class="st-status-dot"></span>Online (After
+                            Transaction)</label>
+                        <label class="data-lbl st-version">v 3.4.44.05</label>
+                        <label class="data-lbl st-date">Feb 05 2024, 09:36:26 AM</label>
+                        <label class="data-lbl st-number">*****25669</label>
+                    </div>
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                        <div class="gts-img-div">
+                            <!-- <p class="gts-text">GTS</p> -->
+                            <img src="{% static 'img/gts-old-logo.png' %}" alt="" style="width: 25px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2 pos-card">
+                    <div class="card-body pos-card-body">
+                        <div class="row m-auto">
+                            <div class="col-12 p-0">
+                                <p class="pos-card-cat">Categories</p>
+                            </div>
+                        </div>
+                        <div class="row m-auto">
+                            <div class="col-4 p-0 d-flex justify-content-center align-items-center">
+                                <div class="fuel">
+                                    <img class="fuel-img" src="{% static 'img/fuel.png' %}" alt="">
+                                    <p class="fuel-name">Fuels</p>
+                                </div>
+                            </div>
+                            <div class="col-4 p-0 d-flex justify-content-center align-items-center">
+                                <div class="service">
+                                    <img class="service-img" src="{% static 'img/service.png' %}" alt="">
+                                    <p class="service-name">Service</p>
+                                </div>
+                            </div>
+                            <div class="col-4 p-0 d-flex justify-content-center align-items-center">
+                                <div class="shop">
+                                    <img class="shop-img" src="{% static 'img/shop.png' %}" alt="">
+                                    <p class="shop-name">Shop</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-auto mt-2">
+                            <div class="col-12 p-0">
+                                <p class="pos-card-man">Manage</p>
+                            </div>
+                        </div>
+                        <div class="row m-auto">
+                            <div class="col-lg-6 p-0 d-flex justify-content-center align-items-center">
+                                <div class="settings">
+                                    <img class="settings-img" src="{% static 'img/settings.png' %}" alt="">
+                                    <p class="settings-name">Settings</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 p-0 d-flex justify-content-center align-items-center">
+                                <div class="telecollect">
+                                    <img class="telecollect-img" src="{% static 'img/telecollect.png' %}" alt="">
+                                    <p class="telecollect-name">Telecollect</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-auto">
+                    <div class="col-lg-12 p-0 text-center">
+                        <div class="card mt-2 pos-card">
+                            <div class="card-body pos-card-body">
+                                <img class="total-img" src="{% static 'img/total.png' %}" alt="">
+                                <p class="total-trans">000</p>
+                                <p class="total-amount">AMT. <span class="amount-num">0</span> EGP</p>
+                                <p class="total-name">Total Transactions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-auto">
+                    <div class="col-lg-12 p-0 text-center">
+                        <div class="card mt-2 pos-card">
+                            <div class="card-body pos-card-body">
+                                <img class="recharge-img" src="{% static 'img/recharge.png' %}" alt="">
+                                <p class="recharge-trans">000</p>
+                                <p class="recharge-amount">AMT. <span class="amount-num">0</span> EGP</p>
+                                <p class="recharge-name">Total Recharges</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pos-screen2 d-none">
+                <div class="row m-auto">
+                    <div class="col-lg-4 p-0 d-flex justify-content-start align-items-center">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="col-lg-4 p-0 d-flex justify-content-center align-items-center">
+                        <label class="ava-trans">AVAILABLE TRANSACTIONS</label>
+                    </div>
+                    <div class="col-lg-4 p-0 d-flex justify-content-end align-items-center">
+                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                    </div>
+                </div>
+                <div class="row mt-2 m-auto">
+                    <div class="col-lg-3 p-0 d-flex justify-content-center align-items-center">
+                        <img class="ps2-gas-img" src="{% static 'img/pos-screen2-gas.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-3 p-0">
+                        <p class="transaction">92</p>
+                        <p class="transaction">PUMP 1</p>
+                        <p class="transaction">2024-02-05</p>
+                        <p class="transaction">sale ID:358</p>
+                    </div>
+                    <div class="col-lg-3 p-0">
+                        <p class="transaction">QTY:29.96LTR</p>
+                        <p class="transaction">09:34:10</p>
+                    </div>
+                    <div class="col-lg-3 p-0">
+                        <p class="transaction">EGP 337.05</p>
+                        <p class="transaction">NOZZLE: 1</p>
+                        <p class="transaction">SEQ:295</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pos-screen3 d-none">
+                <div class="card">
+                    <div class="card-body" style="padding: 0px 5px;">
+                        <div class="row m-auto">
+                            <div class="col-lg-12 p-0">
+                                <label class="ps3-title">Validate your transaction:</label>
+                            </div>
+                        </div>
+                        <div class="row m-auto mt-2">
+                            <div class="col-lg-12 p-0">
+                                <p class="ps3-product">Product: <span></span></p>
+                                <p class="ps3-volume">Volume: <span></span></p>
+                                <p class="ps3-amount">Amount: <span></span></p>
+                            </div>
+                        </div>
+                        <div class="row m-auto mt-2">
+                            <div class="col-lg-6 p-0"></div>
+                            <div class="col-lg-3 p-0">
+                                <label class="ps3-no">NO</label>
+                            </div>
+                            <div class="col-lg-3 p-0">
+                                <label class="ps3-yes">YES</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pos-screen4 d-none">
+                <div class="row m-auto">
+                    <div class="col-lg-4 p-0">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="col-lg-8 d-flex justify-content-start align-items-center p-0">
+                        <label class="ps4-title">MODE OF PAYMENT</label>
+                    </div>
+                </div>
+                <div class="row m-1 bg-white" style="border-radius: 5px;padding: 5px;">
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                        <img class="ps2-gas-img" src="{% static 'img/fleet.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-7 d-flex justify-content-start align-items-center">
+                        <p class="ps4-card-title">Fleet Card</p>
+                    </div>
+                </div>
+                <div class="row m-1 bg-white" style="border-radius: 5px;padding: 5px;">
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                        <img class="ps2-gas-img" src="{% static 'img/bank.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-7 d-flex justify-content-start align-items-center">
+                        <p class="ps4-card-title">Bank Card</p>
+                    </div>
+                </div>
+                <div class="row m-1 bg-white" style="border-radius: 5px;padding: 5px;">
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                        <img class="ps2-gas-img" src="{% static 'img/cash.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-7 d-flex justify-content-start align-items-center">
+                        <p class="ps4-card-title">Cash</p>
+                    </div>
+                </div>
+                <div class="row m-1 bg-white" style="border-radius: 5px;padding: 5px;">
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                        <img class="ps2-gas-img" src="{% static 'img/cash.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-7 d-flex justify-content-start align-items-center">
+                        <p class="ps4-card-title">Visa/Master Card</p>
+                    </div>
+                </div>
+                <div class="row m-1 bg-white" style="border-radius: 5px;padding: 5px;">
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center">
+                        <img class="ps2-gas-img" src="{% static 'img/cash.png' %}" alt="">
+                    </div>
+                    <div class="col-lg-7 d-flex justify-content-start align-items-center">
+                        <p class="ps4-card-title">QR Payment</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pos-screen5 d-none">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="col-lg-5 d-flex justify-content-center align-items-center p-0">
+                        <label class="ps5-head-title">TICKET</label>
+                    </div>
+                </div>
+                <div class="row mt-1 m-auto">
+                    <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                        <label class="ps5-client">Client Receipt</label>
+                    </div>
+                </div>
+                <div class="row mt-1 m-auto">
+                    <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                        <img class="ps5-logo-img" src="{% static 'img/gts-old-logo.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="row mt-1 m-auto">
+                    <div class="col-lg-12 text-center">
+                        <p class="ps5-title">GTS</p>
+                        <p class="ps5-title">Dover Station</p>
+                        <p class="ps5-title">Egypt, Cairo</p>
+                        <p class="ps5-title">05/02/2024 09:45:59</p>
+                        <p class="ps5-title">Receipt No.:: TRX156691707119169</p>
+                    </div>
+                </div>
+                <div class="row m-auto">
+                    <div class="col-lg-12 text-center">
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Trans Seq No:</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">297</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Pump No</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">4</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Product Name</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">95</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Payment Type</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">Cash</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Transaction By:</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">H</p>
+                            </div>
+                        </div>
+                        <hr style="margin: 1px;">
+                    </div>
+                </div>
+                <div class="row m-auto">
+                    <div class="col-lg-12 text-center">
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Volume</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">9.69L</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Price</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">14.25</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">TIN</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">123456</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Amount</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">138.08</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                                <p class="ps5-title">Total Paid:</p>
+                            </div>
+                            <div class="col-lg-4 d-flex justify-content-end align-items-center">
+                                <p class="ps5-title">138.08EGP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1 m-auto">
+                    <div class="col-lg-12 text-center">
+                        <p class="ps5-title">****************************</p>
+                        <p class="ps5-title">Energy is our future</p>
+                        <p class="ps5-title">Save it!</p>
+                        <p class="ps5-title">See you soon</p>
+                        <p class="ps5-title">****************************</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row m-auto d-none" id="wetstock_station">
+    <div class="col-lg-9 main-wetstock">
+        <div class="main-popup0">
+            <div class="main-popup-group-1" onclick="greenFocus()" style="cursor: pointer;">
+                <span class="main-popup-group-1-index"></span>
+                <label class="m-0">Leaks</label>
+            </div>
+            <div class="main-popup-group-2" onclick="blueFocus()" style="cursor: pointer;">
+                <span class="main-popup-group-2-index"></span>
+                <label class="m-0">Actual Losses</label>
+            </div>
+            <div class="main-popup-group-3" onclick="grayFocus()" style="cursor: pointer;">
+                <span class="main-popup-group-3-index"></span>
+                <label class="m-0">Preceived Losses</label>
+            </div>
+        </div>
+        <div id="main-popup1" class="main-popup1 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup1-leg"></span>
+            <span class="main-popup1-leg-end"></span>
+            <label class="main-popup-text">Pump Tests Not Recorded</label>
+        </div>
+        <div id="main-popup2" class="main-popup2 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup2-leg"></span>
+            <span class="main-popup2-leg-end"></span>
+            <label class="main-popup-text">Missing Sales Data</label>
+        </div>
+        <div id="main-popup3" class="main-popup3 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup3-leg"></span>
+            <span class="main-popup3-leg-end"></span>
+            <label class="main-popup-text">Drainback</label>
+        </div>
+        <div id="main-popup4" class="main-popup4 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup4-leg"></span>
+            <span class="main-popup4-leg-end"></span>
+            <label class="main-popup-text">Line Leaks</label>
+        </div>
+        <div id="main-popup5" class="main-popup5 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup5-leg"></span>
+            <span class="main-popup5-leg-end"></span>
+            <label class="main-popup-text">Delivery Theft</label>
+        </div>
+        <div id="main-popup6" class="main-popup6 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup6-leg"></span>
+            <span class="main-popup6-leg-end"></span>
+            <label class="main-popup-text">Offset Fill Leaks</label>
+        </div>
+        <div id="main-popup7" class="main-popup7 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup7-leg"></span>
+            <span class="main-popup7-leg-end"></span>
+            <label class="main-popup-text">Fill Line Leaks</label>
+        </div>
+        <div id="main-popup8" class="main-popup8 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup8-leg"></span>
+            <span class="main-popup8-leg-end"></span>
+            <label class="main-popup-text">Temperature /Evaporation</label>
+        </div>
+        <div id="main-popup9" class="main-popup9 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup9-leg"></span>
+            <span class="main-popup9-leg-end"></span>
+            <label class="main-popup-text">Theft From Tanks</label>
+        </div>
+        <div id="main-popup10" class="main-popup10 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup10-leg"></span>
+            <span class="main-popup10-leg-end"></span>
+            <label class="main-popup-text">Tank Leaks</label>
+        </div>
+        <div id="main-popup11" class="main-popup11 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup11-leg"></span>
+            <span class="main-popup11-leg-end"></span>
+            <label class="main-popup-text">Wrong Delivery Volume</label>
+        </div>
+        <div id="main-popup12" class="main-popup12 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup12-leg"></span>
+            <span class="main-popup12-leg-end"></span>
+            <label class="main-popup-text">Tank Calibration</label>
+        </div>
+        <div id="main-popup13" class="main-popup13 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup13-leg"></span>
+            <span class="main-popup13-leg-end"></span>
+            <label class="main-popup-text">Water Ingress</label>
+        </div>
+        <div id="main-popup14" class="main-popup14 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup14-leg"></span>
+            <span class="main-popup14-leg-end"></span>
+            <label class="main-popup-text">Pump Leaks</label>
+        </div>
+        <div id="main-popup15" class="main-popup15 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup15-leg"></span>
+            <span class="main-popup15-leg-end"></span>
+            <label class="main-popup-text">Meter Drift</label>
+        </div>
+        <div id="main-popup16" class="main-popup16 d-flex justify-content-center align-items-center p-2">
+            <span class="main-popup16-leg"></span>
+            <span class="main-popup16-leg-end"></span>
+            <label class="main-popup-text">Theft/Fraud At Pump</label>
+        </div>
+    </div>
+    <div class="col-lg-3 d-flex justify-content-center align-items-center">
+        <p class="wetstock-summary">
+            <span id="demo" class="typing cursor"></span>
+        </p>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'js/Home.js' %}"></script>
+{% endblock %}
