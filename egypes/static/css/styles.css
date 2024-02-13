@@ -12898,7 +12898,9 @@ body {
 }
 
 .sb-sidenav-dark {
-    background-color: #212529;
+    /* background-color: #212529; */
+    /* background-color: #0c3c60; */
+    background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);
     color: rgba(255, 255, 255, 0.5);
 }
 
@@ -13834,7 +13836,7 @@ input {
 .nozzile1-popup {
     width: 60px;
     height: 60px;
-    background-color: #dc3545;
+    /* background-color: #dc3545; */
     border: 3px solid #f0f0f0;
     border-radius: 50%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
@@ -13851,7 +13853,7 @@ input {
 .dispenser-popup {
     width: 200px;
     /* height: 140px; */
-    background-color: #000000cc;
+    background-color: #222425b5;
     border: 3px solid #f0f0f0;
     border-radius: 3%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
@@ -13902,7 +13904,7 @@ input {
 .nozzile2-popup {
     width: 60px;
     height: 60px;
-    background-color: #28a745;
+    /* background-color: #28a745; */
     border: 3px solid #f0f0f0;
     border-radius: 50%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
@@ -14521,6 +14523,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .nozzle-img {
@@ -14529,17 +14532,19 @@ input {
 }
 
 .nozzle-product {
-    background-color: #28a745;
+    background-color: #bcbcbc;
     position: absolute;
     width: 100%;
-    top: 8px;
+    top: 10px;
+    left: -170px;
     text-align: center;
-    font-size: 50px;
-    transform: rotate(-40deg) translate(-70px, -45px);
+    font-size: 40px;
+    transform: rotate(-40deg);
+    color: #072136;
 }
 
 .nozzle-details {
-    background-color: #d3d2d2;
+    background-color: #bcbcbc;
     border-radius: 5px;
 }
 
@@ -14549,12 +14554,12 @@ input {
 }
 
 .nozzle-screen {
-    border: 5px solid #212529;
+    border: 5px solid #205b7c;
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    background-color: #212529b0;
-    box-shadow: 5px 5px 10px 0px #212529;
+    background-color: #757575;
+    /* box-shadow: 5px 5px 10px 0px #212529; */
 }
 
 .nozzle-screen-text {
@@ -14628,7 +14633,7 @@ input {
     width: 300px;
     height: 200px;
     border: 5px solid #212529;
-    border-radius: 100% / 90%;
+    border-radius: 100% / 50%;
     position: relative;
     overflow: hidden;
     z-index: 2;
@@ -14637,7 +14642,7 @@ input {
 .tank-visula-label {
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: -30px;
     border-radius: 5px;
     z-index: 1;
     font-size: 25px;
@@ -14667,7 +14672,8 @@ input {
 }
 
 .tank-volume {
-    background-color: #198754;
+    /* background-color: #198754; */
+    background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -14680,6 +14686,7 @@ input {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin: 15px;
 }
 
 .pos-status-dot {
@@ -14765,20 +14772,22 @@ input {
 }
 
 .ads-preview {
-    width: 600px;
-    height: 300px;
+    width: 100%;
+    min-height: 250px;
+    max-height: 250px;
     background-color: white;
     border: 1px solid #fff;
     border-radius: 2px;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.ads-preview::-webkit-scrollbar {
+/* .ads-preview::-webkit-scrollbar {
     display: none;
-}
+} */
 
 /* ******************************main-wetstock********************************** */
 .main-wetstock {
@@ -14879,6 +14888,10 @@ input {
     background-color: #6c757d;
 }
 
+.main-popup-1-hover {
+    background-color: #6c757d;
+}
+
 .main-popup1-leg {
     height: 255px;
     position: absolute;
@@ -14915,6 +14928,10 @@ input {
 }
 
 .main-popup2:hover {
+    background-color: #6c757d;
+}
+
+.main-popup-2-hover {
     background-color: #6c757d;
 }
 
@@ -14958,6 +14975,10 @@ input {
     background-color: #6c757d;
 }
 
+.main-popup-3-hover {
+    background-color: #6c757d;
+}
+
 .main-popup3-leg {
     /* width: 3px; */
     height: 200px;
@@ -14995,6 +15016,10 @@ input {
 }
 
 .main-popup4:hover {
+    background-color: #28a745;
+}
+
+.main-popup-4-hover {
     background-color: #28a745;
 }
 
@@ -15038,6 +15063,10 @@ input {
     background-color: #0d6efd;
 }
 
+.main-popup-5-hover {
+    background-color: #0d6efd;
+}
+
 .main-popup5-leg {
     /* width: 3px; */
     height: 280px;
@@ -15075,6 +15104,10 @@ input {
 }
 
 .main-popup6:hover {
+    background-color: #28a745;
+}
+
+.main-popup-6-hover {
     background-color: #28a745;
 }
 
@@ -15118,6 +15151,10 @@ input {
     background-color: #28a745;
 }
 
+.main-popup-7-hover {
+    background-color: #28a745;
+}
+
 .main-popup7-leg {
     /* width: 3px; */
     height: 70px;
@@ -15155,6 +15192,10 @@ input {
 }
 
 .main-popup8:hover {
+    background-color: #0d6efd;
+}
+
+.main-popup-8-hover {
     background-color: #0d6efd;
 }
 
@@ -15198,6 +15239,10 @@ input {
     background-color: #0d6efd;
 }
 
+.main-popup-9-hover {
+    background-color: #0d6efd;
+}
+
 .main-popup9-leg {
     /* width: 3px; */
     height: 210px;
@@ -15235,6 +15280,10 @@ input {
 }
 
 .main-popup10:hover {
+    background-color: #28a745;
+}
+
+.main-popup-10-hover {
     background-color: #28a745;
 }
 
@@ -15278,6 +15327,10 @@ input {
     background-color: #6c757d;
 }
 
+.main-popup-11-hover {
+    background-color: #6c757d;
+}
+
 .main-popup11-leg {
     /* width: 3px; */
     height: 100px;
@@ -15315,6 +15368,10 @@ input {
 }
 
 .main-popup12:hover {
+    background-color: #6c757d;
+}
+
+.main-popup-12-hover {
     background-color: #6c757d;
 }
 
@@ -15358,6 +15415,10 @@ input {
     background-color: #6c757d;
 }
 
+.main-popup-13-hover {
+    background-color: #6c757d;
+}
+
 .main-popup13-leg {
     /* width: 3px; */
     height: 325px;
@@ -15395,6 +15456,10 @@ input {
 }
 
 .main-popup14:hover {
+    background-color: #28a745;
+}
+
+.main-popup-14-hover {
     background-color: #28a745;
 }
 
@@ -15438,6 +15503,10 @@ input {
     background-color: #0d6efd;
 }
 
+.main-popup-15-hover {
+    background-color: #0d6efd;
+}
+
 .main-popup15-leg {
     /* width: 3px; */
     height: 175px;
@@ -15475,6 +15544,10 @@ input {
 }
 
 .main-popup16:hover {
+    background-color: #0d6efd;
+}
+
+.main-popup-16-hover {
     background-color: #0d6efd;
 }
 
@@ -15556,18 +15629,34 @@ input {
 
 /* **********************************tablet*************************** */
 .tablet-wetstock {
-    background-image: url(/static/img/Picture3.jpg);
-    /* width: 100%; */
+    width: 100%;
     height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: contain;
     position: relative;
 }
 
+.tablet-wetstock-col {
+    background-image: url(/static/img/Picture3.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: contain;
+}
+/* .tablet-wetstock {
+    background-image: url(/static/img/Picture3.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    margin: auto;
+} */
+
 .popup0 {
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     left: 30px;
 }
@@ -15641,7 +15730,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #6c757d8f;
-    position: fixed;
+    position: absolute;
     top: 80px;
     left: 25px;
     border-radius: 15px;
@@ -15680,7 +15769,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #6c757d8f;
-    position: fixed;
+    position: absolute;
     top: 88px;
     left: 160px;
     border-radius: 15px;
@@ -15720,7 +15809,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #6c757d8f;
-    position: fixed;
+    position: absolute;
     top: 88px;
     left: 295px;
     border-radius: 15px;
@@ -15760,7 +15849,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #28a745a1;
-    position: fixed;
+    position: absolute;
     top: 88px;
     left: 430px;
     border-radius: 15px;
@@ -15800,7 +15889,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #0d6efda1;
-    position: fixed;
+    position: absolute;
     top: 88px;
     left: 565px;
     border-radius: 15px;
@@ -15840,7 +15929,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #28a745a1;
-    position: fixed;
+    position: absolute;
     top: 175px;
     left: 650px;
     border-radius: 15px;
@@ -15880,7 +15969,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #28a745a1;
-    position: fixed;
+    position: absolute;
     top: 340px;
     left: 640px;
     border-radius: 15px;
@@ -15920,7 +16009,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #0d6efda1;
-    position: fixed;
+    position: absolute;
     top: 410px;
     left: 640px;
     border-radius: 15px;
@@ -15960,7 +16049,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #0d6efda1;
-    position: fixed;
+    position: absolute;
     top: 485px;
     left: 640px;
     border-radius: 15px;
@@ -16000,7 +16089,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #28a745a1;
-    position: fixed;
+    position: absolute;
     top: 540px;
     left: 530px;
     border-radius: 15px;
@@ -16040,7 +16129,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #6c757d8f;
-    position: fixed;
+    position: absolute;
     top: 490px;
     left: 405px;
     border-radius: 15px;
@@ -16080,7 +16169,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #6c757d8f;
-    position: fixed;
+    position: absolute;
     top: 540px;
     left: 270px;
     border-radius: 15px;
@@ -16120,7 +16209,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #6c757d8f;
-    position: fixed;
+    position: absolute;
     top: 465px;
     left: 210px;
     border-radius: 15px;
@@ -16160,7 +16249,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #28a745a1;
-    position: fixed;
+    position: absolute;
     top: 385px;
     left: 170px;
     border-radius: 15px;
@@ -16200,7 +16289,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #0d6efda1;
-    position: fixed;
+    position: absolute;
     top: 400px;
     left: 35px;
     border-radius: 15px;
@@ -16240,7 +16329,7 @@ input {
     width: 120px;
     height: 60px;
     background-color: #0d6efda1;
-    position: fixed;
+    position: absolute;
     top: 305px;
     left: 10px;
     border-radius: 15px;

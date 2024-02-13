@@ -1,208 +1,135 @@
 {% extends "Welcome.html" %}
 {% load static %}
 {% block Nozzles %}
-<div class="row">
-    <div class="col-12">
-        <div class="row m-4">
-            <div class="col-5 m-auto">
-                <div class="card bg-dark text-white nozzle-card" style="cursor: pointer;" onclick="showDetails('gas95_details')">
-                    <div class="card-body nozzle-card-body">
-                        <img id="nozzle95" class="nozzle-img" src="{% static 'img/nozzle2.png' %}" alt="">
-                        <img id="nozzle95Up" class="nozzle-img d-none" src="{% static 'img/nozzle2Up.png' %}" alt="">
-                        <h1 class="nozzle-product">95</h1>
+<main>
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="row m-4">
+                    <div class="col-5 m-auto">
+                        <div class="card nozzle-card" style="cursor: pointer;background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%) !important;box-shadow: 15px 10px 20px 5px #a2a2a2;"
+                            onclick="showDetails('gas95_details')">
+                            <div class="card-body nozzle-card-body">
+                                <img id="nozzle95" class="nozzle-img" src="{% static 'img/nozzle2.png' %}" alt="">
+                                <h1 class="nozzle-product">95</h1>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-7 nozzle-details d-none" id="gas95_details">
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="nozzle-screen">
-                            <div class="row m-2">
-                                <div class="col-4 d-flex justify-content-start align-items-center">
-                                    <h4 class="nozzle-screen-text">Total</h4>
-                                </div>
-                                <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
-                                    <h6 class="m-0">0.0</h6>
-                                </div>
-                                <div class="col-2 d-flex justify-content-start align-items-center text-white">
-                                    <h6 class="m-0">EGP</h6>
+                    <div class="col-7 nozzle-details d-none" id="gas95_details">
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="nozzle-screen">
+                                    <div class="row m-2">
+                                        <div class="col-4 d-flex justify-content-start align-items-center">
+                                            <h4 class="nozzle-screen-text">Total</h4>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
+                                            <h6 id="total95" class="m-0">0.0</h6>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-start align-items-center text-white">
+                                            <h6 class="m-0">EGP</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-4 d-flex justify-content-start align-items-center">
+                                            <h4 class="nozzle-screen-text">Volume</h4>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
+                                            <h6 id="amount95" class="m-0">0.0</h6>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-start align-items-center text-white">
+                                            <h6 class="m-0">Liters</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-4 d-flex justify-content-start align-items-center">
+                                            <h4 class="nozzle-screen-text">Unit</h4>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
+                                            <h6 id="unit95" class="m-0">{{gas95}}</h6>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-start align-items-center text-white">
+                                            <h6 class="m-0">EGP</h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row m-2">
-                                <div class="col-4 d-flex justify-content-start align-items-center">
-                                    <h4 class="nozzle-screen-text">Volume</h4>
-                                </div>
-                                <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
-                                    <h6 class="m-0">0.0</h6>
-                                </div>
-                                <div class="col-2 d-flex justify-content-start align-items-center text-white">
-                                    <h6 class="m-0">Liters</h6>
-                                </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <button class="btn" style="width: 100%;background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);color: white;" onclick="Up(95)">UP</button>
                             </div>
-                            <div class="row m-2">
-                                <div class="col-4 d-flex justify-content-start align-items-center">
-                                    <h4 class="nozzle-screen-text">Unit</h4>
-                                </div>
-                                <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
-                                    <h6 class="m-0">0.0</h6>
-                                </div>
-                                <div class="col-2 d-flex justify-content-start align-items-center text-white">
-                                    <h6 class="m-0">EGP</h6>
-                                </div>
+                            <div class="col-6">
+                                <button id="down95" class="btn" style="width: 100%;background-color: #072136;color: #fff;" onclick="Down(95)" disabled>DOWN</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col-4">
-                        <button class="btn btn-success" style="width: 100%;" onclick="Up95()">UP</button>
+                <div class="row m-4">
+                    <div class="col-5 m-auto">
+                        <div class="card nozzle-card" style="cursor: pointer;background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%) !important;box-shadow: 15px 10px 20px 5px #a2a2a2;"
+                            onclick="showDetails('gas92_details')">
+                            <div class="card-body nozzle-card-body">
+                                <img id="nozzle92" class="nozzle-img" src="{% static 'img/nozzle2.png' %}" alt="">
+                                <h1 class="nozzle-product">92</h1>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <button id="down95" class="btn btn-danger" style="width: 100%;" onclick="Down95()" disabled>DOWN</button>
-                    </div>
-                    <div class="col-4">
-                        <button class="btn btn-dark" style="width: 100%;" onclick="Reset95()">RESET</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row m-4">
-            <div class="col-5 m-auto">
-                <div class="card bg-dark text-white nozzle-card" style="cursor: pointer;" onclick="showDetails('gas92_details')">
-                    <div class="card-body nozzle-card-body">
-                        <img id="nozzle92" class="nozzle-img" src="{% static 'img/nozzle2.png' %}" alt="">
-                        <img id="nozzle92Up" class="nozzle-img d-none" src="{% static 'img/nozzle2Up.png' %}" alt="">
-                        <h1 class="nozzle-product">92</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-7 nozzle-details d-none" id="gas92_details">
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="nozzle-screen">
-                            <div class="row m-2">
-                                <div class="col-4 d-flex justify-content-start align-items-center">
-                                    <h4 class="nozzle-screen-text">Total</h4>
-                                </div>
-                                <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
-                                    <h6 class="m-0">0.0</h6>
-                                </div>
-                                <div class="col-2 d-flex justify-content-start align-items-center text-white">
-                                    <h6 class="m-0">EGP</h6>
+                    <div class="col-7 nozzle-details d-none" id="gas92_details">
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="nozzle-screen">
+                                    <div class="row m-2">
+                                        <div class="col-4 d-flex justify-content-start align-items-center">
+                                            <h4 class="nozzle-screen-text">Total</h4>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
+                                            <h6 id="total92" class="m-0">0.0</h6>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-start align-items-center text-white">
+                                            <h6 class="m-0">EGP</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-4 d-flex justify-content-start align-items-center">
+                                            <h4 class="nozzle-screen-text">Volume</h4>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
+                                            <h6 id="amount92" class="m-0">0.0</h6>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-start align-items-center text-white">
+                                            <h6 class="m-0">Liters</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row m-2">
+                                        <div class="col-4 d-flex justify-content-start align-items-center">
+                                            <h4 class="nozzle-screen-text">Unit</h4>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
+                                            <h6 id="unit92" class="m-0">{{gas92}}</h6>
+                                        </div>
+                                        <div class="col-2 d-flex justify-content-start align-items-center text-white">
+                                            <h6 class="m-0">EGP</h6>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row m-2">
-                                <div class="col-4 d-flex justify-content-start align-items-center">
-                                    <h4 class="nozzle-screen-text">Volume</h4>
-                                </div>
-                                <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
-                                    <h6 class="m-0">0.0</h6>
-                                </div>
-                                <div class="col-2 d-flex justify-content-start align-items-center text-white">
-                                    <h6 class="m-0">Liters</h6>
-                                </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <button class="btn" style="width: 100%;background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);color: white;" onclick="Up(92)">UP</button>
                             </div>
-                            <div class="row m-2">
-                                <div class="col-4 d-flex justify-content-start align-items-center">
-                                    <h4 class="nozzle-screen-text">Unit</h4>
-                                </div>
-                                <div class="col-6 d-flex justify-content-center align-items-center bg-white text-dark">
-                                    <h6 class="m-0">0.0</h6>
-                                </div>
-                                <div class="col-2 d-flex justify-content-start align-items-center text-white">
-                                    <h6 class="m-0">EGP</h6>
-                                </div>
+                            <div class="col-6">
+                                <button id="down92" class="btn" style="width: 100%;background-color: #072136;color: #fff;" style="width: 100%;" onclick="Down(92)"
+                                    disabled>DOWN</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col-4">
-                        <button class="btn btn-success" style="width: 100%;" onclick="Up92()">UP</button>
-                    </div>
-                    <div class="col-4">
-                        <button id="down92" class="btn btn-danger" style="width: 100%;" onclick="Down92()" disabled>DOWN</button>
-                    </div>
-                    <div class="col-4">
-                        <button class="btn btn-dark" style="width: 100%;" onclick="Reset92()">RESET</button>
-                    </div>
-                </div>
+        
             </div>
         </div>
-
+        <script type="text/javascript" src="{% static 'js/Nozzles.js' %}"></script>
     </div>
-</div>
-    <!-- <div class="row m-auto justify-content-center align-items-center">
-        <div class="col-8">
-            <div class="card">
-                <div class="card-body p-0">
-                    <div class="row m-auto">
-                        <div class="col-4 d-flex justify-content-center align-items-center p-0" style="background-color: #e1e1e1;">
-                            <img id="nozzle95" src="{% static 'img/nozzle2.png' %}" alt="" style="width: 100%;transform: rotateY(180deg);">
-                            <h1 style="position: absolute;bottom: 0px;right: 20px;">95</h1>
-                        </div>
-                        <div class="col-8">
-                            <div class="row m-4">
-                                <div class="col-12">
-                                    <button class="btn btn-success" style="width: 100%;" onclick="Up95()">UP</button>
-                                </div>
-                            </div>
-                            <div class="row m-4">
-                                <div class="col-12">
-                                    <button id="down95" class="btn btn-danger" style="width: 100%;" onclick="Down95()" disabled>DOWN</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="footer95" class="card-footer d-none" style="background-color: #e1e1e1;">
-                    <div class="row">
-                        <div class="col-4 d-flex justify-content-center align-items-center" style="border-right: 1px solid gray;">
-                            <h4>Amount</h4>
-                        </div>
-                        <div class="col-8 d-flex justify-content-center align-items-center">
-                            <h4 id="amount95">0</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row m-auto justify-content-center align-items-center">
-        <div class="col-8">
-            <div class="card">
-                <div class="card-body p-0">
-                    <div class="row m-auto">
-                        <div class="col-4 d-flex justify-content-center align-items-center p-0" style="background-color: #e1e1e1;">
-                            <img id="nozzle92" src="{% static 'img/nozzle2.png' %}" alt="" style="width: 100%;transform: rotateY(180deg);">
-                            <h1 style="position: absolute;bottom: 0px;right: 20px;">92</h1>
-                        </div>
-                        <div class="col-8">
-                            <div class="row m-4">
-                                <div class="col-12">
-                                    <button class="btn btn-success" style="width: 100%;" onclick="Up92()">UP</button>
-                                </div>
-                            </div>
-                            <div class="row m-4">
-                                <div class="col-12">
-                                    <button id="down92" class="btn btn-danger" style="width: 100%;" onclick="Down92()" disabled>DOWN</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="footer92" class="card-footer d-none" style="background-color: #e1e1e1;">
-                    <div class="row">
-                        <div class="col-4 d-flex justify-content-center align-items-center" style="border-right: 1px solid gray;">
-                            <h4>Amount</h4>
-                        </div>
-                        <div class="col-8 d-flex justify-content-center align-items-center">
-                            <h4 id="amount92">0</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <script type="text/javascript" src="{% static 'js/Nozzles.js' %}"></script>
+</main>
 {% endblock %}

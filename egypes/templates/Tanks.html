@@ -1,126 +1,129 @@
 {% extends "Welcome.html" %}
 {% load static %}
 {% block Tanks %}
-
-<div class="row m-2 justify-content-center align-items-center">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body p-0">
-                <div class="row m-auto">
-                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                        <div class="tank-visual">
-                            <div id="fuel95" class="tank-volume text-center text-white" style="transform: translateY({{fuel95}}%);">
-                                <span id="tank_vol_amount95" class="tank-vol-amount">{{precentage95}}</span>
-                            </div>
-                        </div>
-                        <span class="tank-visula-label">95</span>
-                        <div class="tank-leg1"></div>
-                        <div class="tank-leg2"></div>
-                    </div>
-                    <div class="col-8">
-                        <div class="row mt-4">
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <input type="number" id="capacity95" class="form-control text-center" value="{{capacity95}}" min="0" placeholder="Capacity">
+<main>
+    <div class="container-fluid">
+        <div class="row mt-4 justify-content-center align-items-center">
+            <div class="col-11">
+                <div class="card" style="padding: 0px 40px 0px 40px;">
+                    <div class="card-body p-0">
+                        <div class="row m-auto">
+                            <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                <div class="tank-visual">
+                                    <div id="fuel95" class="tank-volume text-center text-white" style="transform: translateY({{fuel95}}%);">
+                                        <span id="tank_vol_amount95" class="tank-vol-amount">{{precentage95}}</span>
                                     </div>
                                 </div>
-                                <div class="row mt-2">
-                                    <div class="col-12">
-                                        <input type="number" id="amount95" class="form-control text-center" value="{{amount95}}" min="0" placeholder="Amount">
+                                <span class="tank-visula-label">95</span>
+                                <div class="tank-leg1"></div>
+                                <div class="tank-leg2"></div>
+                            </div>
+                            <div class="col-8">
+                                <div class="row mt-4">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <input type="number" id="capacity95" class="form-control text-center" value="{{capacity95}}" min="0" placeholder="Capacity">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12">
+                                                <input type="number" id="amount95" class="form-control text-center" value="{{amount95}}" min="0" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                        <button class="btn text-white" style="width: 100%; background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);box-shadow: 0px 0px 10px 1px #000;" onclick="tankDetails(95)">Submit</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-6 d-flex justify-content-center align-items-center">
-                                <button class="btn btn-success" style="width: 100%;" onclick="tankDetails(95)">Submit</button>
-                            </div>
-                        </div>
-                        <div class="row mt-4 bg-dark p-2">
-                            <div class="col-6">
-                                <input type="number" id="delivery95" class="form-control text-center" value="{{delivery95}}" min="0" placeholder="Delivery">
-                            </div>
-                            <div class="col-6">
-                                <button class="btn btn-success" style="width: 100%;" onclick="deliveryDetails(95)">Add Delivery</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="footer95" class="card-footer bg-dark text-white">
-                <div class="row">
-                    <div class="col-4 d-flex justify-content-center align-items-center"
-                        style="border-right: 1px solid gray;">
-                        <h4>Delivery Progress</h4>
-                    </div>
-                    <div class="col-8 p-0 progress m-auto">
-                        <!-- <h4 id="amount95">0</h4> -->
-                        <div id="progress95" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
-                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">0%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row m-2 justify-content-center align-items-center">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body p-0">
-                <div class="row m-auto">
-                    <div class="col-4 d-flex justify-content-center align-items-center p-0">
-                        <div class="tank-visual">
-                            <div id="fuel92" class="tank-volume text-center text-white" style="transform: translateY({{fuel92}}%);">
-                                <span id="tank_vol_amount92" class="tank-vol-amount">{{precentage92}}</span>
-                            </div>
-                        </div>
-                        <span class="tank-visula-label">92</span>
-                        <div class="tank-leg1"></div>
-                        <div class="tank-leg2"></div>
-                    </div>
-                    <div class="col-8">
-                        <div class="row mt-4">
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <input type="number" id="capacity92" class="form-control text-center" value="{{capacity92}}" min="0" placeholder="Capacity">
+                                <div class="row mt-4 ml-1 bg-dark" style="padding: 10px 0px;border-radius: 10px;">
+                                    <div class="col-6">
+                                        <input type="number" id="delivery95" class="form-control text-center" value="{{delivery95}}" min="0" placeholder="Add Delivery">
                                     </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-12">
-                                        <input type="number" id="amount92" class="form-control text-center" value="{{amount92}}" min="0" placeholder="Amount">
+                                    <div class="col-6">
+                                        <button class="btn text-white" style="width: 100%; background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);box-shadow: 1px 1px 5px 1px #fff;" onclick="deliveryDetails(95)">Add Delivery</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 d-flex justify-content-center align-items-center">
-                                <button class="btn btn-success" style="width: 100%;" onclick="tankDetails(92)">Submit</button>
-                            </div>
-                        </div>
-                        <div class="row mt-4 bg-dark p-2">
-                            <div class="col-6">
-                                <input type="number" id="delivery92" class="form-control text-center" value="{{delivery92}}" min="0" placeholder="Delivery">
-                            </div>
-                            <div class="col-6">
-                                <button class="btn btn-success" style="width: 100%;" onclick="deliveryDetails(92)">Add Delivery</button>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div id="footer95" class="card-footer bg-dark text-white">
-                <div class="row">
-                    <div class="col-4 d-flex justify-content-center align-items-center"
-                        style="border-right: 1px solid gray;">
-                        <h4>Delivery Progress</h4>
-                    </div>
-                    <div class="col-8 p-0 progress m-auto">
-                        <!-- <h4 id="amount95">0</h4> -->
-                        <div id="progress92" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
-                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">0%</div>
+                    <div id="footer95" class="card-footer bg-dark text-white" style="border-radius: 10px;">
+                        <div class="row">
+                            <div class="col-4 d-flex justify-content-center align-items-center"
+                                style="border-right: 1px solid gray;">
+                                <h4 class="m-0">Delivery Progress</h4>
+                            </div>
+                            <div class="col-8 p-0 progress m-auto">
+                                <!-- <h4 id="amount95">0</h4> -->
+                                <div id="progress95" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">0%</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row mt-4 justify-content-center align-items-center">
+            <div class="col-11">
+                <div class="card" style="padding: 0px 40px 0px 40px;">
+                    <div class="card-body p-0">
+                        <div class="row m-auto">
+                            <div class="col-4 d-flex justify-content-center align-items-center p-0">
+                                <div class="tank-visual">
+                                    <div id="fuel92" class="tank-volume text-center text-white" style="transform: translateY({{fuel92}}%);">
+                                        <span id="tank_vol_amount92" class="tank-vol-amount">{{precentage92}}</span>
+                                    </div>
+                                </div>
+                                <span class="tank-visula-label">92</span>
+                                <div class="tank-leg1"></div>
+                                <div class="tank-leg2"></div>
+                            </div>
+                            <div class="col-8">
+                                <div class="row mt-4">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <input type="number" id="capacity92" class="form-control text-center" value="{{capacity92}}" min="0" placeholder="Capacity">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12">
+                                                <input type="number" id="amount92" class="form-control text-center" value="{{amount92}}" min="0" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center align-items-center">
+                                        <button class="btn text-white" style="width: 100%; background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);box-shadow: 0px 0px 10px 1px #000;" onclick="tankDetails(92)">Submit</button>
+                                    </div>
+                                </div>
+                                <div class="row mt-4 ml-1 bg-dark" style="padding: 10px 0px;border-radius: 10px;">
+                                    <div class="col-6">
+                                        <input type="number" id="delivery92" class="form-control text-center" value="{{delivery92}}" min="0" placeholder="Delivery">
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn text-white" style="width: 100%; background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);box-shadow: 1px 1px 5px 1px #fff;" onclick="deliveryDetails(92)">Add Delivery</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer95" class="card-footer bg-dark text-white" style="border-radius: 10px;">
+                        <div class="row">
+                            <div class="col-4 d-flex justify-content-center align-items-center"
+                                style="border-right: 1px solid gray;">
+                                <h4 class="m-0">Delivery Progress</h4>
+                            </div>
+                            <div class="col-8 p-0 progress m-auto">
+                                <!-- <h4 id="amount95">0</h4> -->
+                                <div id="progress92" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="{% static 'js/Tanks.js' %}"></script>
     </div>
-</div>
-<script type="text/javascript" src="{% static 'js/Tanks.js' %}"></script>
+</main>
 {% endblock %}

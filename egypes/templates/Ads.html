@@ -1,32 +1,35 @@
 {% extends "Welcome.html" %}
 {% load static %}
 {% block Ads %}
-<div class="row m-auto">
-    <div class="col-12">
-        <div class="card bg-dark text-white">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="ads-preview" id="ads_preview">
+<main>
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 80vh;">
+        <div class="row" style="width: 80%;">
+            <div class="col-12 m-auto">
+                <div class="card text-white" style="background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ads-preview" id="ads_preview"></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <input type="file" class="form-control" id="FileUpload">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-6 m-auto">
-                        <input type="button" id="previewBTN" class="form-control btn btn-secondary" value="Preview" disabled onclick="preview()">
-                    </div>
-                    <div class="col-6 m-auto">
-                        <input type="button" class="form-control btn btn-success" value="Upload">
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <input type="file" class="form-control" id="FileUpload">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6 m-auto">
+                                <input type="button" id="previewBTN" class="form-control btn" style="padding: 8px 0px;box-shadow: 0px 0px 8px 0px #fff;    background-color: #757575;color: white;" value="Preview" disabled onclick="preview()">
+                            </div>
+                            <div class="col-6 m-auto">
+                                <input type="button" class="form-control btn text-white" style="background: linear-gradient(130deg, #71b7e6 -50%, #123345 75%);padding: 8px 0px;box-shadow: 0px 0px 8px 0px #fff;" value="Upload">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="{% static 'js/Ads.js' %}"></script>
     </div>
-</div>
-<script type="text/javascript" src="{% static 'js/Ads.js' %}"></script>
+</main>
 {% endblock %}

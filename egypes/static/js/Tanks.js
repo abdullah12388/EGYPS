@@ -140,7 +140,16 @@ function deliveryDetails(product){
         });
         if(parseFloat(start_value) > parseFloat(delivery.value)){
             document.getElementById('progress'+parseInt(product)).classList.remove('progress-bar-animated');
+            var amount_product = document.getElementById('amount'+parseInt(product));
             clearInterval(interval);
+            amount_product.value = parseFloat(amount_product.value) + parseFloat(delivery.value);
+            delivery.value = '';
+            setTimeout(function(){
+                var progress_bar = document.getElementById('progress'+parseInt(product));
+                progress_bar.style.width = '0%';
+                progress_bar.innerHTML = '0%';
+                progress_bar.style.transition = 'all 1s';
+            },1000)
         }
     }, 50)
 }

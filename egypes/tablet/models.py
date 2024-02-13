@@ -26,3 +26,14 @@ class Tank(models.Model):
     delivery = models.ManyToManyField(Delivery, blank=True, null=True, related_name='TanksDelivery')
     sale = models.ManyToManyField(Sale, blank=True, null=True, related_name='TanksSale')
     timestamp = models.DateTimeField(auto_now_add=True)
+    
+    
+class Transaction(models.Model):
+    product = models.PositiveIntegerField()
+    total = models.FloatField()
+    amount = models.FloatField()
+    unit = models.FloatField()
+    sale = models.ForeignKey(Sale, on_delete=models.CASCADE)
+    date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True)
+    status = models.BooleanField(default=False)

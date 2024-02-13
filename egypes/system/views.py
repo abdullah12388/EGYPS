@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 import os
 from django.shortcuts import render
@@ -11,6 +12,10 @@ from asgiref.sync import async_to_sync
 def Home(request):
     prices = Price.objects.all().last()
     tanks = Tank.objects.all()
+    transactions = Transaction.objects.all().order_by('-id')
+    t_total = 0
+    for t in transactions:
+        t_total += t.total
     context = {
         'room_name': 'broadcast',
         
@@ -19,10 +24,15 @@ def Home(request):
         'diesel': prices.diesel,
         'cng': prices.cng,
         
-        'amount95': tanks.get(product=95).amount,
+        'amount95': format(tanks.get(product=95).amount, '0.2f'),
         'precentage95': format(((tanks.get(product=95).amount*100)/tanks.get(product=95).capacity), '0.2f'),
         
-        'amount92': tanks.get(product=92).amount,
+        'amount92': format(tanks.get(product=92).amount, '0.2f'),
         'precentage92': format(((tanks.get(product=92).amount*100)/tanks.get(product=92).capacity), '0.2f'),
+        
+        'transactions': transactions.filter(status=False),
+        't_count': transactions.count(),
+        't_total': t_total,
+        'pos_datetime': datetime.now(),
     }
     return render(request, 'Home.html', context)

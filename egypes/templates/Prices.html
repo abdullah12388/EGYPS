@@ -1,50 +1,54 @@
 {% extends "Welcome.html" %}
 {% load static %}
 {% block Prices %}
-<div class="row m-auto">
-    <div class="col-12">
-        <div class="card bg-dark text-white">
-            <div class="card-body">
-                <div class="row mt-4">
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                         <h1 class="m-0">Gasoline 95</h1>
-                    </div>
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                        <input type="text" id="gas95" class="form-control text-center" value="{{gas95}}" placeholder="Gas 95 Price" style="font-size: 30px;font-weight: bold;">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                         <h1 class="m-0">Gasoline 92</h1>
-                    </div>
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                        <input type="text" id="gas92" class="form-control text-center" value="{{gas92}}" placeholder="Gas 92 Price" style="font-size: 30px;font-weight: bold;">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                         <h1 class="m-0">Diesel</h1>
-                    </div>
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                        <input type="text" id="diesel" class="form-control text-center" value="{{diesel}}" placeholder="Diesel Price" style="font-size: 30px;font-weight: bold;">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                         <h1 class="m-0">CNG</h1>
-                    </div>
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                        <input type="text" id="cng" class="form-control text-center" value="{{cng}}" placeholder="CNG Price" style="font-size: 30px;font-weight: bold;">
-                    </div>
-                </div>
-                <div class="row mt-4 mb-2">
-                    <div class="col-4 m-auto d-flex justify-content-center align-items-center">
-                        <button class="btn btn-success m-auto" onclick="changePrices()" style="width: 100%;font-size: 20px;font-weight: bold;">Change</button>
+<main>
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 80vh;">
+        <div class="row">
+            <div class="col-12">
+                <div class="card text-white" style="background: linear-gradient(306deg, #71b7e6 -50%, #123345 75%);">
+                    <div class="card-body">
+                        <div class="row mt-4">
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                 <h2 class="m-0">Gasoline95</h2>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <input type="text" id="gas95" class="form-control text-center" value="{{gas95}}" placeholder="Gas 95 Price" style="font-size: 30px;font-weight: bold;">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                 <h2 class="m-0">Gasoline92</h2>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <input type="text" id="gas92" class="form-control text-center" value="{{gas92}}" placeholder="Gas 92 Price" style="font-size: 30px;font-weight: bold;">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                 <h2 class="m-0">Diesel</h2>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <input type="text" id="diesel" class="form-control text-center" value="{{diesel}}" placeholder="Diesel Price" style="font-size: 30px;font-weight: bold;">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                 <h2 class="m-0">CNG</h2>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <input type="text" id="cng" class="form-control text-center" value="{{cng}}" placeholder="CNG Price" style="font-size: 30px;font-weight: bold;">
+                            </div>
+                        </div>
+                        <div class="row mt-4 mb-2">
+                            <div class="col-8 m-auto d-flex justify-content-center align-items-center">
+                                <button class="btn m-auto" style="width: 100%;background: linear-gradient(130deg, #71b7e6 -50%, #123345 75%);color: white;width: 100%;font-size: 20px;font-weight: bold;padding: 10px;margin-top: 20px !important;box-shadow: 0px 0px 10px 1px #f2f2f2;" onclick="changePrices()">Change With New Prices</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="{% static 'js/Prices.js' %}"></script>
     </div>
-</div>
-<script type="text/javascript" src="{% static 'js/Prices.js' %}"></script>
+</main>
 {% endblock %}

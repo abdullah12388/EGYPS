@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
@@ -11,6 +12,7 @@ def Welcome(request):
     return HttpResponseRedirect('/tablet/Nozzles/')
 
 def Nozzles(request):
+    prices = Price.objects.last()
     channel_layer = get_channel_layer()
     async_to_sync(channel_layer.group_send)(
         "notification_broadcast",
@@ -19,18 +21,26 @@ def Nozzles(request):
             'message': json.dumps(
                 {
                     'type': 'nozzles',
+                    'action': 'open',
                 }
             )
         }
     )
-    return render(request, 'Nozzles.html', {'room_name': 'broadcast'})
+    context = {
+        'room_name': 'broadcast',
+        'gas95': prices.gas95,
+        'gas92': prices.gas92,
+    }
+    return render(request, 'Nozzles.html', context)
 
-def NozzlesGas95UpApi(request):
+def NozzlesUpSocket(request):
     if request.GET:
-        print(request.GET)
-        nozzle_product = request.GET.get('nozzle')
-        nozzle_unit = request.GET.get('unit')
-        nozzle_amount = request.GET.get('amount')
+        # print(request.GET)
+        product = request.GET.get('product', None)
+        total = request.GET.get('total', None)
+        amount = request.GET.get('amount', None)
+        unit = request.GET.get('unit', None)
+        status = request.GET.get('status', None)
         channel_layer = get_channel_layer()
         async_to_sync(channel_layer.group_send)(
             "notification_broadcast",
@@ -38,16 +48,86 @@ def NozzlesGas95UpApi(request):
                 'type': 'send_notification',
                 'message': json.dumps(
                     {
-                        'nozzle': nozzle_product,
-                        'unit': nozzle_unit,
-                        'amount': nozzle_amount,
+                        'type': 'nozzles',
+                        'action': 'change',
+                        'product': product,
+                        'total': total,
+                        'amount': amount,
+                        'unit': unit,
+                        'status': status,
                     }
                 )
             }
         )
         return JsonResponse(data={'status': 'Done'}, safe=False)
 
+def NozzlesDownSocket(request):
+    if request.GET:
+        # print(request.GET)
+        product = request.GET.get('product', None)
+        total = request.GET.get('total', None)
+        amount = request.GET.get('amount', None)
+        unit = request.GET.get('unit', None)
+        status = request.GET.get('status', None)
+        # create sale
+        sale_obj = Sale.objects.create(amount=amount)
+        # minus the tank amount
+        tank_obj = Tank.objects.get(product=product)
+        tank_obj.sale.add(sale_obj)
+        tank_obj.amount = float(tank_obj.amount) - float(amount)
+        tank_obj.save()
+        # create transaction
+        transaction_obj = Transaction.objects.create(
+            product = int(product),
+            total = float(total),
+            amount = float(amount),
+            unit = float(unit),
+            sale = sale_obj,
+            status=False,
+        )
+        
+        # send data on socket
+        channel_layer = get_channel_layer()
+        async_to_sync(channel_layer.group_send)(
+            "notification_broadcast",
+            {
+                'type': 'send_notification',
+                'message': json.dumps(
+                    {
+                        'type': 'nozzles',
+                        'action': 'change',
+                        'product': product,
+                        'total': total,
+                        'amount': amount,
+                        'unit': unit,
+                        'status': status,
+                        
+                        'transaction_id': transaction_obj.id,
+                        'sale_id': sale_obj.id,
+                        'transaction_date': date_formatter(transaction_obj.date),
+                        'transaction_time': time_formatter(transaction_obj.time),
+                    }
+                )
+            }
+        )
+        return JsonResponse(data={'status': 'Done'}, safe=False)
+
+
+def date_formatter(date):
+    formatted_date = date.strftime("%m-%d-%Y")
+    return formatted_date
+
+def time_formatter(time):
+    formatted_time = time.strftime("%I:%M %p")
+    return formatted_time
+
 def POS(request):
+    if request.GET:
+        pay_tid = request.GET.get('pay_tid', None)
+        transaction = Transaction.objects.get(id=pay_tid)
+        transaction.status = True
+        transaction.save()
+        return  JsonResponse(data={'status': 'Done'}, safe=False)
     channel_layer = get_channel_layer()
     async_to_sync(channel_layer.group_send)(
         "notification_broadcast",
@@ -56,11 +136,96 @@ def POS(request):
             'message': json.dumps(
                 {
                     'type': 'pos',
+                    'action': 'open',
                 }
             )
         }
     )
-    return render(request, 'POS.html', {'room_name': 'broadcast'})
+    transactions = Transaction.objects.all().order_by('-id')
+    t_total = 0
+    for t in transactions:
+        t_total += t.total
+    context = {
+        'room_name': 'broadcast',
+        'transactions': transactions.filter(status=False),
+        't_count': transactions.count(),
+        't_total': t_total,
+        'pos_datetime': datetime.now(),
+    }
+    # print(transactions.count(), t_total)
+    return render(request, 'POS.html', context)
+
+def POSSocket(request):
+    if request.GET:
+        # print(request.GET)
+        current = request.GET.get('current', None)
+        dist = request.GET.get('dist', None)
+        tid = request.GET.get('tid', None)
+        pay_tid = request.GET.get('pay_tid', None)
+        if tid:
+            transaction = Transaction.objects.get(id=int(tid))
+            channel_layer = get_channel_layer()
+            async_to_sync(channel_layer.group_send)(
+                "notification_broadcast",
+                {
+                    'type': 'send_notification',
+                    'message': json.dumps(
+                        {
+                            'type': 'pos',
+                            'action': 'change',
+                            'current': current,
+                            'dist': dist,
+                            
+                            't_id': tid,
+                            't_product': transaction.product,
+                            't_total': transaction.total,
+                            't_amount': transaction.amount,
+                        }
+                    )
+                }
+            )
+        elif pay_tid:
+            transaction = Transaction.objects.get(id=int(pay_tid))
+            transaction.status = True
+            transaction.save()
+            channel_layer = get_channel_layer()
+            async_to_sync(channel_layer.group_send)(
+                "notification_broadcast",
+                {
+                    'type': 'send_notification',
+                    'message': json.dumps(
+                        {
+                            'type': 'pos',
+                            'action': 'change',
+                            'current': current,
+                            'dist': dist,
+                            
+                            'pay_tid': pay_tid,
+                            'pay_product': transaction.product,
+                            'pay_total': transaction.total,
+                            'pay_amount': transaction.amount,
+                            'pay_unit': transaction.unit,
+                        }
+                    )
+                }
+            )
+        else:
+            channel_layer = get_channel_layer()
+            async_to_sync(channel_layer.group_send)(
+                "notification_broadcast",
+                {
+                    'type': 'send_notification',
+                    'message': json.dumps(
+                        {
+                            'type': 'pos',
+                            'action': 'change',
+                            'current': current,
+                            'dist': dist,
+                        }
+                    )
+                }
+            )
+        return JsonResponse(data={'status': 'Done'}, safe=False)
 
 def Prices(request):
     if request.GET:
@@ -173,17 +338,16 @@ def Tanks(request):
     context = {
         'room_name': 'broadcast',
         'capacity95': capacity95,
-        'amount95': amount95,
+        'amount95': format(amount95, '0.2f'),
         'fuel95': 100-(((amount95)*100)/capacity95),
         'precentage95': format((((amount95)*100)/capacity95), '0.2f'),
         
         'capacity92': capacity92,
-        'amount92': amount92,
+        'amount92': format(amount92, '0.2f'),
         'fuel92': 100-(((amount92)*100)/capacity92),
         'precentage92': format((((amount92)*100)/capacity92), '0.2f'),
     }
     return render(request, 'Tanks.html', context)
-
 
 def TankDeliverySocket(request):
     if request.GET:
@@ -225,6 +389,28 @@ def Wetstock(request):
         }
     )
     return render(request, 'Wetstock.html', {'room_name': 'broadcast'})
+
+def WetstockSocket(request):
+    if request.GET:
+        # print(request.GET)
+        popup = request.GET.get('popup', None)
+        group = request.GET.get('group', None)
+        channel_layer = get_channel_layer()
+        async_to_sync(channel_layer.group_send)(
+            "notification_broadcast",
+            {
+                'type': 'send_notification',
+                'message': json.dumps(
+                    {
+                        'type': 'wetstock',
+                        'popup': popup,
+                        'group': group,
+                    }
+                )
+            }
+        )
+        return JsonResponse(data={'status': 'Done'}, safe=False)
+
 
 def Ads(request):
     channel_layer = get_channel_layer()

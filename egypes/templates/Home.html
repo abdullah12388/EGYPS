@@ -16,7 +16,7 @@
                 <h5 class="dispenser-total">Total</h5>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 class="dispenser-total-price">00.00</h5>
+                <h5 id="ads_total" class="dispenser-total-price">00.00</h5>
             </div>
         </div>
         <div class="row m-2">
@@ -24,7 +24,7 @@
                 <h5 class="dispenser-volume">Liters</h5>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="amount_volume" class="dispenser-volume-price">00.00</h5>
+                <h5 id="ads_amount" class="dispenser-volume-price">00.00</h5>
             </div>
         </div>
         <div class="row m-2">
@@ -32,12 +32,12 @@
                 <h5 class="dispenser-unit">Unit</h5>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="unit_price" class="dispenser-unit-price">00.00</h5>
+                <h5 id="ads_unit" class="dispenser-unit-price">00.00</h5>
             </div>
         </div>
     </div>
-    <div class="nozzile1-popup text-center">
-        <img class="w-100" src="{% static 'img/nozzle.png' %}" alt="">
+    <div id="nozzle95" class="nozzile1-popup bg-danger text-center">
+        <img class="w-100" style="transform: rotateY(180deg);" src="{% static 'img/nozzle.png' %}" alt="">
     </div>
     <div class="dispenser-popup">
         <span class="dispenser-popup-leg"></span>
@@ -46,7 +46,7 @@
                 <h5 class="dispenser-total">Total</h5>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 class="dispenser-total-price">00.00</h5>
+                <h5 id="disp_total" class="dispenser-total-price">00.00</h5>
             </div>
         </div>
         <div class="row m-2">
@@ -54,7 +54,7 @@
                 <h5 class="dispenser-volume">Liters</h5>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="amount_volume" class="dispenser-volume-price">00.00</h5>
+                <h5 id="disp_amount" class="dispenser-volume-price">00.00</h5>
             </div>
         </div>
         <div class="row m-2">
@@ -62,12 +62,12 @@
                 <h5 class="dispenser-unit">Unit</h5>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="unit_price" class="dispenser-unit-price">00.00</h5>
+                <h5 id="disp_unit" class="dispenser-unit-price">00.00</h5>
             </div>
         </div>
     </div>
-    <div class="nozzile2-popup text-center">
-        <img class="w-100" src="{% static 'img/nozzle.png' %}" alt="">
+    <div id="nozzle92" class="nozzile2-popup bg-danger text-center">
+        <img class="w-100" style="transform: rotateY(180deg);" src="{% static 'img/nozzle.png' %}" alt="">
     </div>
     <div class="price-sign-popup">
         <span class="price-sign-popup-leg"></span>
@@ -138,20 +138,20 @@
         <span class="pos-popup-leg"></span>
         <!-- <img class="pos-frame d-none" src="{% static 'img/pos.png' %}" alt=""> -->
         <div class="pos-screens">
-            <div class="pos-screen">
+            <div id="main_sc1" class="pos-screen">
                 <div class="row m-auto mt-2">
                     <div class="col-lg-7">
                         <label class="data-lbl st-name">DOVER STATION</label>
                         <label class="data-lbl st-status"><span class="st-status-dot"></span>Online (After
                             Transaction)</label>
                         <label class="data-lbl st-version">v 3.4.44.05</label>
-                        <label class="data-lbl st-date">Feb 05 2024, 09:36:26 AM</label>
+                        <label class="data-lbl st-date">{{pos_datetime}}</label>
                         <label class="data-lbl st-number">*****25669</label>
                     </div>
                     <div class="col-lg-5 d-flex justify-content-center align-items-center">
                         <div class="gts-img-div">
                             <!-- <p class="gts-text">GTS</p> -->
-                            <img src="{% static 'img/gts-old-logo.png' %}" alt="" style="width: 25px;">
+                            <img src="{% static 'img/gts-logo.png' %}" alt="" style="width: 25px;">
                         </div>
                     </div>
                 </div>
@@ -208,8 +208,8 @@
                         <div class="card mt-2 pos-card">
                             <div class="card-body pos-card-body">
                                 <img class="total-img" src="{% static 'img/total.png' %}" alt="">
-                                <p class="total-trans">000</p>
-                                <p class="total-amount">AMT. <span class="amount-num">0</span> EGP</p>
+                                <p class="total-trans">{{t_count}}</p>
+                                <p class="total-amount">AMT. <span class="amount-num">{{t_total}}</span> EGP</p>
                                 <p class="total-name">Total Transactions</p>
                             </div>
                         </div>
@@ -228,7 +228,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pos-screen2 d-none">
+            <div id="main_sc2" class="pos-screen2 d-none">
                 <div class="row m-auto">
                     <div class="col-lg-4 p-0 d-flex justify-content-start align-items-center">
                         <i class="fa-solid fa-arrow-left"></i>
@@ -240,28 +240,40 @@
                         <i class="fa-solid fa-arrow-rotate-right"></i>
                     </div>
                 </div>
-                <div class="row mt-2 m-auto">
-                    <div class="col-lg-3 p-0 d-flex justify-content-center align-items-center">
-                        <img class="ps2-gas-img" src="{% static 'img/pos-screen2-gas.png' %}" alt="">
-                    </div>
-                    <div class="col-lg-3 p-0">
-                        <p class="transaction">92</p>
-                        <p class="transaction">PUMP 1</p>
-                        <p class="transaction">2024-02-05</p>
-                        <p class="transaction">sale ID:358</p>
-                    </div>
-                    <div class="col-lg-3 p-0">
-                        <p class="transaction">QTY:29.96LTR</p>
-                        <p class="transaction">09:34:10</p>
-                    </div>
-                    <div class="col-lg-3 p-0">
-                        <p class="transaction">EGP 337.05</p>
-                        <p class="transaction">NOZZLE: 1</p>
-                        <p class="transaction">SEQ:295</p>
+                <div class="row">
+                    <div id="main_sc2_transactions" class="col-12">
+                        {% for transaction in transactions %}
+                        <div id="transaction_{{transaction.id}}" class="row mt-2 m-auto">
+                            <div class="col-lg-3 p-0 d-flex justify-content-center align-items-center">
+                                <img class="ps2-gas-img" src="{% static 'img/pos-screen2-gas.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-3 p-0">
+                                <p class="transaction">{{transaction.product}}</p>
+                                <p class="transaction">PUMP 1</p>
+                                <p class="transaction">{{transaction.date}}</p>
+                                <p class="transaction">sale ID:{{transaction.sale.id}}</p>
+                            </div>
+                            <div class="col-lg-3 p-0">
+                                <p class="transaction">QTY:{{transaction.amount}}LTR</p>
+                                <p class="transaction">{{transaction.time}}</p>
+                            </div>
+                            <div class="col-lg-3 p-0">
+                                <p class="transaction">{{transaction.total}} EGP</p>
+                                <p class="transaction">
+                                    {% if transaction.product == 95 %}
+                                    NOZZLE: 95
+                                    {% else %}
+                                    NOZZLE: 92
+                                    {% endif %}
+                                </p>
+                                <p class="transaction">SEQ:{{transaction.id}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            <div class="pos-screen3 d-none">
+            <div id="main_sc3" class="pos-screen3 d-none">
                 <div class="card">
                     <div class="card-body" style="padding: 0px 5px;">
                         <div class="row m-auto">
@@ -271,9 +283,9 @@
                         </div>
                         <div class="row m-auto mt-2">
                             <div class="col-lg-12 p-0">
-                                <p class="ps3-product">Product: <span></span></p>
-                                <p class="ps3-volume">Volume: <span></span></p>
-                                <p class="ps3-amount">Amount: <span></span></p>
+                                <p class="ps3-product">Product: <span id="mt_product"></span></p>
+                                <p class="ps3-volume">Volume: <span id="mt_amount"></span> LTR</p>
+                                <p class="ps3-amount">Total: <span id="mt_total"></span> EGP</p>
                             </div>
                         </div>
                         <div class="row m-auto mt-2">
@@ -288,7 +300,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pos-screen4 d-none">
+            <div id="main_sc4" class="pos-screen4 d-none">
                 <div class="row m-auto">
                     <div class="col-lg-4 p-0">
                         <i class="fa-solid fa-arrow-left"></i>
@@ -321,7 +333,7 @@
                         <p class="ps4-card-title">Cash</p>
                     </div>
                 </div>
-                <div class="row m-1 bg-white" style="border-radius: 5px;padding: 5px;">
+                <div class="row m-1 bg-white d-none" style="border-radius: 5px;padding: 5px;">
                     <div class="col-lg-5 d-flex justify-content-center align-items-center">
                         <img class="ps2-gas-img" src="{% static 'img/cash.png' %}" alt="">
                     </div>
@@ -338,7 +350,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pos-screen5 d-none">
+            <div id="main_sc5" class="pos-screen5 d-none">
                 <div class="row">
                     <div class="col-lg-4">
                         <i class="fa-solid fa-arrow-left"></i>
@@ -354,7 +366,7 @@
                 </div>
                 <div class="row mt-1 m-auto">
                     <div class="col-lg-12 d-flex justify-content-center align-items-center">
-                        <img class="ps5-logo-img" src="{% static 'img/gts-old-logo.png' %}" alt="">
+                        <img class="ps5-logo-img" src="{% static 'img/gts-logo.png' %}" alt="">
                     </div>
                 </div>
                 <div class="row mt-1 m-auto">
@@ -362,7 +374,7 @@
                         <p class="ps5-title">GTS</p>
                         <p class="ps5-title">Dover Station</p>
                         <p class="ps5-title">Egypt, Cairo</p>
-                        <p class="ps5-title">05/02/2024 09:45:59</p>
+                        <p class="ps5-title">{{pos_datetime}}</p>
                         <p class="ps5-title">Receipt No.:: TRX156691707119169</p>
                     </div>
                 </div>
@@ -373,7 +385,7 @@
                                 <p class="ps5-title">Trans Seq No:</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">297</p>
+                                <p id="mtr_tid" class="ps5-title">297</p>
                             </div>
                         </div>
                         <div class="row">
@@ -381,7 +393,7 @@
                                 <p class="ps5-title">Pump No</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">4</p>
+                                <p class="ps5-title">1</p>
                             </div>
                         </div>
                         <div class="row">
@@ -389,7 +401,7 @@
                                 <p class="ps5-title">Product Name</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">95</p>
+                                <p id="mtr_product" class="ps5-title">95</p>
                             </div>
                         </div>
                         <div class="row">
@@ -405,7 +417,7 @@
                                 <p class="ps5-title">Transaction By:</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">H</p>
+                                <p class="ps5-title">Anonymous</p>
                             </div>
                         </div>
                         <hr style="margin: 1px;">
@@ -418,7 +430,7 @@
                                 <p class="ps5-title">Volume</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">9.69L</p>
+                                <p class="ps5-title"><span id="mtr_amount">9.69</span>LTR</p>
                             </div>
                         </div>
                         <div class="row">
@@ -426,7 +438,7 @@
                                 <p class="ps5-title">Price</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">14.25</p>
+                                <p id="mtr_unit" class="ps5-title">14.25</p>
                             </div>
                         </div>
                         <div class="row">
@@ -442,7 +454,7 @@
                                 <p class="ps5-title">Amount</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">138.08</p>
+                                <p id="mtr_total" class="ps5-title">138.08</p>
                             </div>
                         </div>
                         <div class="row">
@@ -450,7 +462,7 @@
                                 <p class="ps5-title">Total Paid:</p>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-end align-items-center">
-                                <p class="ps5-title">138.08EGP</p>
+                                <p class="ps5-title"><span id="mtr_total_end">138.08</span>EGP</p>
                             </div>
                         </div>
                     </div>

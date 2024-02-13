@@ -1,90 +1,75 @@
-var interval95;
-var interval92;
+var interval;
 
 function showDetails(details_id){
     document.getElementById(details_id).classList.toggle('d-none');
 }
 
-function Up95() {
+function Up(product) {
     // animation
-    document.getElementById('nozzle95').classList.toggle('scale');
+    document.getElementById('nozzle'+parseInt(product)).classList.add('scale');
+    var total = document.getElementById('total'+parseInt(product));
+    var amount = document.getElementById('amount'+parseInt(product));
+    var unit = document.getElementById('unit'+parseInt(product));
+    total.innerText = 0.0;
+    amount.innerText = 0.0;
     // increase
-    document.getElementById('footer95').classList.toggle('d-none');
-    document.getElementById('footer95').style.transition = 'all 1s';
-    interval95 = setInterval(function () {
-        var amount = document.getElementById('amount95');
-        amount.innerText = parseFloat(amount.innerText) + 1.0;
-        amount.style.transition = 'all 1s';
+    interval = setInterval(function () {
+        
+        amount.innerText = (parseFloat(amount.innerText) + 0.1).toFixed(2);
+        amount.style.transition = 'all 0.1s';
+
+        total.innerHTML = (parseFloat(amount.innerText) * parseFloat(unit.innerHTML)).toFixed(2);
+        total.style.transition = 'all 0.1s';
+
         $.ajax({
-            url: "/tablet/Nozzles/Gas95/Up/",
+            url: "/tablet/Nozzles/Up/Socket/",
             method: "GET",
             dataType: "json",
             data: {
-                'nozzle': 95,
-                'unit': 14.30,
+                'product': product,
+                'total': total.innerText,
                 'amount': amount.innerText,
+                'unit': unit.innerText,
+                'status': 'Up',
             },
             success: function (response) {
                 console.log(response);
             },
         });
-    }, 500)
+    }, 100)
     // down button
-    document.getElementById('down95').removeAttribute('disabled');
-    document.getElementById('down95').style.transition = 'all 1s';
+    document.getElementById('down'+product).removeAttribute('disabled');
+    document.getElementById('down'+product).style.transition = 'all 1s';
 }
 
-function Down95() {
+function Down(product) {
     // animation
-    document.getElementById('nozzle95').classList.toggle('scale');
+    document.getElementById('nozzle'+parseInt(product)).classList.remove('scale');
     // increase
-    clearInterval(interval95)
-    setTimeout(function () {
-        var amount = document.getElementById('amount95');
-        amount.innerText = 0;
-        amount.style.transition = 'all 1s';
-        document.getElementById('footer95').classList.toggle('d-none');
-        document.getElementById('footer95').style.transition = 'all 1s';
-    }, 5000)
+    clearInterval(interval);
+    var total = document.getElementById('total'+parseInt(product));
+    var amount = document.getElementById('amount'+parseInt(product));
+    var unit = document.getElementById('unit'+parseInt(product));
+
+    $.ajax({
+        url: "/tablet/Nozzles/Down/Socket/",
+        method: "GET",
+        dataType: "json",
+        data: {
+            'product': product,
+            'total': total.innerHTML,
+            'amount': amount.innerText,
+            'unit': unit.innerHTML,
+            'status': 'Down',
+        },
+        success: function (response) {
+            console.log(response);
+        },
+    });
     // down button
-    document.getElementById('down95').setAttribute('disabled', 'true');
-    document.getElementById('down95').style.transition = 'all 1s';
+    document.getElementById('down'+product).setAttribute('disabled', 'true');
+    document.getElementById('down'+product).style.transition = 'all 1s';
 }
-
-
-function Up92() {
-    // animation
-    document.getElementById('nozzle92').classList.toggle('scale');
-    // increase
-    document.getElementById('footer92').classList.toggle('d-none');
-    document.getElementById('footer92').style.transition = 'all 1s';
-    interval92 = setInterval(function () {
-        var amount = document.getElementById('amount92');
-        amount.innerText = parseFloat(amount.innerText) + 1.0;
-        amount.style.transition = 'all 1s';
-    }, 1)
-    // down button
-    document.getElementById('down92').removeAttribute('disabled');
-    document.getElementById('down92').style.transition = 'all 1s';
-}
-
-function Down92() {
-    // animation
-    document.getElementById('nozzle92').classList.toggle('scale');
-    // increase
-    clearInterval(interval92)
-    setTimeout(function () {
-        var amount = document.getElementById('amount92');
-        amount.innerText = 0;
-        amount.style.transition = 'all 1s';
-        document.getElementById('footer92').classList.toggle('d-none');
-        document.getElementById('footer92').style.transition = 'all 1s';
-    }, 5000)
-    // down button
-    document.getElementById('down92').setAttribute('disabled', 'true');
-    document.getElementById('down92').style.transition = 'all 1s';
-}
-
 
 
 

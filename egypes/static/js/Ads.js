@@ -13,7 +13,7 @@ function preview() {
         if (file.type == 'video/mp4') {
             preview.innerHTML = '<video style="width:100%;" src="'+event.target.result+'" loop autoplay muted playsinline></video>';
         }else {
-            preview.innerHTML = '<img style="width:100%;" src="' + event.target.result + '" class="img-fluid">';
+            preview.innerHTML = '<img style="width:130px;height:auto;object-fit: cover;" src="' + event.target.result + '" class="img-fluid">';
         }
     }
 
