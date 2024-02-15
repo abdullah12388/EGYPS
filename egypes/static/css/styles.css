@@ -13816,132 +13816,191 @@ input {
     height: calc(250px * 1);
 } */
 
-.station {
+/* .station {
     background-image: url('/static/img/Picture2.jpg');
     height: 100%;
     background-attachment: fixed;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-}
+} */
 
-.ads-object {
+.ads-object1 {
+    width: 27px;
+    position: fixed;
+    top: 377px;
+    left: 768px;
+    transform: skewY(0deg);
+}
+.ads-object2 {
+    width: 27px;
+    position: fixed;
+    top: 360px;
+    left: 650px;
+    transform: skewY(0deg);
+}
+.ads-object3 {
     width: 25px;
     position: fixed;
-    top: 285px;
-    left: 820px;
-    transform: skewY(-10deg);
+    top: 348px;
+    left: 554px;
+    transform: skewY(0deg);
+}
+.ads-object4 {
+    width: 24px;
+    position: fixed;
+    top: 338px;
+    left: 474px;
+    transform: skewY(0deg);
 }
 
 .nozzile1-popup {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     /* background-color: #dc3545; */
     border: 3px solid #f0f0f0;
     border-radius: 50%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 15px;
-    left: 350px;
+    top: 485px;
+    left: 590px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
+    /* transform: skewY(-10deg) skewX(5deg) rotateY(180deg);*/
 }
 
 
 .dispenser-popup {
-    width: 200px;
+    width: 150px;
     /* height: 140px; */
-    background-color: #222425b5;
+    background-color: #1471b6ad;
     border: 3px solid #f0f0f0;
     border-radius: 3%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 10px;
-    left: 430px;
+    top: 490px;
+    left: 640px;
+    /* transform: skewY(-10deg);*/
 }
 
-.dispenser-popup-leg {
+/* .dispenser-popup-leg1 {
+    width: 5px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 5%;
+    box-shadow: 0 0 15px 5px rgb(88 152 210);
+    position: absolute;
+    top: 22px;
+    left: -13px;
+    transform: rotate(-16deg) translate(181px, 104px);
+} */
+
+.dispenser-popup-leg1 {
     width: 2px;
-    height: 215px;
+    height: 80px;
     background-color: #f0f0f0;
     border-radius: 5%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
     /* top: 22px; */
     /* left: -13px; */
-    transform: rotate(-34deg) translate(150px, 233px);
+    transform: rotate(5deg) translate(82px, -90px);
 }
 
 .dispenser-total {
     color: white;
+    margin: 0;
+    font-size: 12px;
 }
 
 .dispenser-total-price {
     color: black;
     margin: 0;
+    font-size: 12px;
 }
 
 .dispenser-volume {
     color: white;
+    margin: 0;
+    font-size: 12px;
 }
 
 .dispenser-volume-price {
     color: black;
     margin: 0;
+    font-size: 12px;
 }
 
 .dispenser-unit {
     color: white;
+    margin: 0;
+    font-size: 12px;
 }
 
 .dispenser-unit-price {
     color: black;
     margin: 0;
+    font-size: 12px;
 }
 
 .nozzile2-popup {
-    width: 60px;
-    height: 60px;
-    /* background-color: #28a745; */
+    width: 40px;
+    height: 40px;
+    /* background-color: #dc3545; */
     border: 3px solid #f0f0f0;
     border-radius: 50%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 85px;
-    left: 350px;
+    top: 535px;
+    left: 590px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
+    /* transform: skewY(-10deg) skewX(5deg) rotateY(180deg);*/
 }
 
 .ads-popup {
-    width: 300px;
-    /* height: 230px; */
-    background-color: #222425b5;
+    width: 150px;
+    height: 270px;
+    /* background-color: #222425b5; */
+    background-color: #1471b6ad;
     border: 3px solid #f0f0f0;
     border-radius: 2%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 10px;
-    left: 1200px;
+    top: 410px;
+    left: 230px;
+    /* transform: skew(-20deg, 6deg);*/
     /* display: flex;
     justify-content: center;
     align-items: center; */
 }
 
-.ads-popup-leg {
-    width: 2px;
-    height: 425px;
+/* .ads-popup-leg1 {
+    width: 5px;
+    height: 245px;
     background-color: #f0f0f0;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
-    /* top: 22px; */
-    /* left: -13px; */
-    transform: rotate(60deg) translate(-190px, 275px);
+    top: 0px;
+    left: 0px;
+    transform: rotate(-20deg) translate(320px, 125px);
+} */
+
+.ads-popup-leg1 {
+    width: 2px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border-radius: 10%;
+    box-shadow: 0 0 15px 5px rgb(88 152 210);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: rotate(73deg) translate(-45px, -315px);
 }
 
 .ads-text {
@@ -13955,61 +14014,66 @@ input {
 }
 
 .price-sign-popup {
-    width: 200px;
-    /* height: 240px; */
-    background-color: #375474;
+    width: 130px;
+    /* height: 124px; */
+    background-color: #1471b6ad;
     border: 3px solid #fefefe;
     border-radius: 2%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
-    position: fixed;
-    top: 350px;
-    left: 15px;
+    position: relative;
+    top: 70px;
+    left: 50px;
+    /* transform: skewY(-15deg);*/
 }
 
 .price-sign-popup-leg {
     width: 2px;
-    height: 180px;
+    height: 50px;
     background-color: #f0f0f0;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
-    /* top: 22px; */
-    /* left: -13px; */
-    transform: rotate(40deg) translate(-60px, -158px);
+    top: 0px;
+    left: 0px;
+    transform: rotate(170deg) translate(-45px, -88px);
 }
 
 .gas-type {
     color: white;
+    font-size: 12px;
+    margin: 0;
 }
 
 .gas-price {
-    color: white;
+    color: #000;
     margin: 0;
+    font-size: 12px;
 }
 
 
 .tank1-popup {
     width: 200px;
     /* height: 140px; */
-    background-color: #000000cc;
+    /* background-color: #000000cc; */
+    background-color: #1471b6ad;
     border: 3px solid #fefefe;
     border-radius: 3%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 470px;
+    top: 500px;
     left: 1300px;
 }
 
 .tank1-popup-leg {
     width: 2px;
-    height: 200px;
+    height: 180px;
     background-color: #fefefe;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
     /* top: 22px; */
     /* left: -13px; */
-    transform: rotate(110deg) translate(-94px, 135px);
+    transform: rotate(100deg) translate(-80px, 106px);
 }
 
 .tank1-amount {
@@ -14019,25 +14083,26 @@ input {
 .tank2-popup {
     width: 200px;
     /* height: 140px; */
-    background-color: #000000cc;
+    /* background-color: #000000cc; */
+    background-color: #1471b6ad;
     border: 3px solid #fefefe;
     border-radius: 3%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 580px;
+    top: 600px;
     left: 1190px;
 }
 
 .tank2-popup-leg {
     width: 2px;
-    height: 330px;
+    height: 302px;
     background-color: #fefefe;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
     /* top: 22px; */
     /* left: -13px; */
-    transform: rotate(115deg) translate(-150px, 235px);
+    transform: rotate(104deg) translate(-145px, 190px);
 }
 
 .tank2-amount {
@@ -14054,29 +14119,29 @@ input {
     top: 300px;
     left: 300px; */
 
-    width: 168px;
-    height: 380px;
+    width: 150px;
+    height: 320px;
     background-image: url(/static/img/pos.png);
     background-repeat: no-repeat;
     background-size: contain;
     border: 1px solid #f2f2f2;
-    border-radius: 20%;
+    border-radius: 5px;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 300px;
-    left: 300px;
+    top: 155px;
+    left: 1375px;
 }
 
 .pos-popup-leg {
     width: 2px;
-    height: 270px;
+    height: 340px;
     background-color: #f2f2f2;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
     /* top: 22px; */
     /* left: -13px; */
-    transform: rotate(77deg) translate(-10px, -308px);
+    transform: rotate(74deg) translate(60px, -325px);
 }
 
 .pos-frame {
@@ -14089,12 +14154,12 @@ input {
 
 
 .pos-screens {
-    width: 81%;
-    height: 71%;
+    width: 98%;
+    height: 92%;
     background-color: #f2f2f2;
     position: absolute;
-    top: 68px;
-    left: 16px;
+    top: 25px;
+    left: 1px;
     overflow: hidden;
 }
 
@@ -14791,13 +14856,13 @@ input {
 
 /* ******************************main-wetstock********************************** */
 .main-wetstock {
-    background-image: url(/static/img/Picture3.jpg);
+    /* background-image: url(/static/img/Picture3.jpg); */
     /* width: 100%; */
     height: 100vh;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     /* background-attachment: fixed; */
-    background-position: center;
-    background-size: contain;
+    /* background-position: center; */
+    /* background-size: contain; */
     position: relative;
 }
 
@@ -14868,6 +14933,28 @@ input {
     background-color: #6c757d;
     border-radius: 50%;
     border: 1px solid #6c757d;
+    top: 3px;
+    left: -10px;
+}
+
+.main-popup-group-4 {
+    width: 150px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    position: relative;
+    color: #fff;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.main-popup-group-4-index {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #fff;
     top: 3px;
     left: -10px;
 }
@@ -15722,6 +15809,28 @@ input {
     background-color: #6c757d;
     border-radius: 50%;
     border: 1px solid #6c757d;
+    top: 3px;
+    left: -10px;
+}
+
+.popup-group-4 {
+    width: 150px;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    position: relative;
+    color: #000;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.popup-group-4-index {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #000;
+    border-radius: 50%;
+    border: 1px solid #000;
     top: 3px;
     left: -10px;
 }

@@ -5,7 +5,7 @@ from django.shortcuts import render
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from .models import *
-
+import pyautogui
 # Create your views here.
 
 def Welcome(request):
@@ -426,3 +426,10 @@ def Ads(request):
         }
     )
     return render(request, 'Ads.html', {'room_name': 'broadcast'})
+
+def ReportView(request):
+    pyautogui.hotkey('ctrl', 'tab')
+    # pyautogui.press('f11')
+    # pyautogui.press('f11')
+    # return render(request, 'Ads.html', {})
+    return HttpResponseRedirect('http://192.168.1.85:224/pypass/')

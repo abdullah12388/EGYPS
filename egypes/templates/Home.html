@@ -2,37 +2,41 @@
 {% load static %}
 {% block Home %}
 <div class="container-fluid station" id="main_station">
-    <img class="ads-object" src="{% static 'img/ads-object.png' %}" alt="">
+    <img class="ads-object1" src="{% static 'img/ads-object.png' %}" alt="">
+    <img class="ads-object2" src="{% static 'img/ads-object.png' %}" alt="">
+    <img class="ads-object3" src="{% static 'img/ads-object.png' %}" alt="">
+    <img class="ads-object4" src="{% static 'img/ads-object-half.png' %}" alt="">
     <div class="ads-popup text-center">
-        <span class="ads-popup-leg"></span>
-        <div class="row m-auto">
+        <!-- <span class="ads-popup-leg1"></span> -->
+        <span class="ads-popup-leg1"></span>
+        <div class="row m-auto" style="overflow: hidden;">
             <div class="col-lg-12 p-0">
-                <video class="ads-video" src="{% static 'video/ads.mp4'%}" poster="{% static 'img/ads.jpg'%}" loop
+                <video class="ads-video" style="width: 355px;" src="{% static 'video/background-video.mp4'%}" loop
                     autoplay muted playsinline></video>
             </div>
         </div>
-        <div class="row m-2">
-            <div class="col-lg-5 d-flex justify-content-start align-items-center">
-                <h5 class="dispenser-total">Total</h5>
+        <div class="row m-1">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h6 class="dispenser-total">Total</h6>
             </div>
-            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="ads_total" class="dispenser-total-price">00.00</h5>
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-lg-5 d-flex justify-content-start align-items-center">
-                <h5 class="dispenser-volume">Liters</h5>
-            </div>
-            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="ads_amount" class="dispenser-volume-price">00.00</h5>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-white">
+                <h6 id="ads_total" class="dispenser-total-price">00.00</h6>
             </div>
         </div>
-        <div class="row m-2">
-            <div class="col-lg-5 d-flex justify-content-start align-items-center">
-                <h5 class="dispenser-unit">Unit</h5>
+        <div class="row m-1">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h6 class="dispenser-volume">Liters</h6>
             </div>
-            <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="ads_unit" class="dispenser-unit-price">00.00</h5>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-white">
+                <h6 id="ads_amount" class="dispenser-volume-price">00.00</h6>
+            </div>
+        </div>
+        <div class="row m-1">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h6 class="dispenser-unit">Unit</h6>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-white">
+                <h6 id="ads_unit" class="dispenser-unit-price">00.00</h6>
             </div>
         </div>
     </div>
@@ -40,29 +44,30 @@
         <img class="w-100" style="transform: rotateY(180deg);" src="{% static 'img/nozzle.png' %}" alt="">
     </div>
     <div class="dispenser-popup">
-        <span class="dispenser-popup-leg"></span>
+        <!-- <span class="dispenser-popup-leg1"></span> -->
+        <span class="dispenser-popup-leg1"></span>
         <div class="row m-2">
             <div class="col-lg-5 d-flex justify-content-start align-items-center">
-                <h5 class="dispenser-total">Total</h5>
+                <h6 class="dispenser-total">Total</h6>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="disp_total" class="dispenser-total-price">00.00</h5>
+                <h6 id="disp_total" class="dispenser-total-price">00.00</h6>
             </div>
         </div>
         <div class="row m-2">
             <div class="col-lg-5 d-flex justify-content-start align-items-center">
-                <h5 class="dispenser-volume">Liters</h5>
+                <h6 class="dispenser-volume">Liters</h6>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="disp_amount" class="dispenser-volume-price">00.00</h5>
+                <h6 id="disp_amount" class="dispenser-volume-price">00.00</h6>
             </div>
         </div>
         <div class="row m-2">
             <div class="col-lg-5 d-flex justify-content-start align-items-center">
-                <h5 class="dispenser-unit">Unit</h5>
+                <h6 class="dispenser-unit">Unit</h6>
             </div>
             <div class="col-lg-7 d-flex justify-content-center align-items-center bg-white">
-                <h5 id="disp_unit" class="dispenser-unit-price">00.00</h5>
+                <h6 id="disp_unit" class="dispenser-unit-price">00.00</h6>
             </div>
         </div>
     </div>
@@ -71,36 +76,36 @@
     </div>
     <div class="price-sign-popup">
         <span class="price-sign-popup-leg"></span>
-        <div class="row m-2">
-            <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                <h5 class="gas-type">Gas 95</h5>
+        <div class="row m-1">
+            <div class="col-lg-7 d-flex justify-content-center align-items-center">
+                <h6 class="gas-type">Gas 95</h6>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
-                <h5 id="gas95" class="gas-price">{{gas95}}</h5>
-            </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                <h5 class="gas-type">Gas 92</h5>
-            </div>
-            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
-                <h5 id="gas92" class="gas-price">{{gas92}}</h5>
+            <div class="col-lg-5 d-flex justify-content-center align-items-center bg-white">
+                <h6 id="gas95" class="gas-price">{{gas95}}</h6>
             </div>
         </div>
-        <div class="row m-2">
-            <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                <h5 class="gas-type">Diesel</h5>
+        <div class="row m-1">
+            <div class="col-lg-7 d-flex justify-content-center align-items-center">
+                <h6 class="gas-type">Gas 92</h6>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
-                <h5 id="diesel" class="gas-price">{{diesel}}</h5>
+            <div class="col-lg-5 d-flex justify-content-center align-items-center bg-white">
+                <h6 id="gas92" class="gas-price">{{gas92}}</h6>
             </div>
         </div>
-        <div class="row m-2">
-            <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                <h5 class="gas-type">CNG</h5>
+        <div class="row m-1">
+            <div class="col-lg-7 d-flex justify-content-center align-items-center">
+                <h6 class="gas-type">Diesel</h6>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center align-items-center bg-black">
-                <h5 id="cng" class="gas-price">{{cng}}</h5>
+            <div class="col-lg-5 d-flex justify-content-center align-items-center bg-white">
+                <h6 id="diesel" class="gas-price">{{diesel}}</h6>
+            </div>
+        </div>
+        <div class="row m-1">
+            <div class="col-lg-7 d-flex justify-content-center align-items-center">
+                <h6 class="gas-type">CNG</h6>
+            </div>
+            <div class="col-lg-5 d-flex justify-content-center align-items-center bg-white">
+                <h6 id="cng" class="gas-price">{{cng}}</h6>
             </div>
         </div>
     </div>
@@ -135,7 +140,7 @@
     </div>
 
     <div class="pos-popup">
-        <span class="pos-popup-leg"></span>
+        <!-- <span class="pos-popup-leg"></span> -->
         <!-- <img class="pos-frame d-none" src="{% static 'img/pos.png' %}" alt=""> -->
         <div class="pos-screens">
             <div id="main_sc1" class="pos-screen">
@@ -494,6 +499,10 @@
             <div class="main-popup-group-3" onclick="grayFocus()" style="cursor: pointer;">
                 <span class="main-popup-group-3-index"></span>
                 <label class="m-0">Preceived Losses</label>
+            </div>
+            <div class="main-popup-group-4" onclick="allFocus()" style="cursor: pointer;">
+                <span class="main-popup-group-4-index"></span>
+                <label class="m-0">ALL</label>
             </div>
         </div>
         <div id="main-popup1" class="main-popup1 d-flex justify-content-center align-items-center p-2">

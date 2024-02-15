@@ -14,4 +14,5 @@ urlpatterns = [
     path('Wetstock/', Wetstock, name='Wetstock'),
     path('Wetstock/Socket/', WetstockSocket, name='WetstockSocket'),
     path('Ads/', Ads, name='Ads'),
+    path('report/', ReportView, name='ReportView'),
 ]

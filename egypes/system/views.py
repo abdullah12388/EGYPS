@@ -34,5 +34,6 @@ def Home(request):
         't_count': transactions.count(),
         't_total': t_total,
         'pos_datetime': datetime.now(),
+        'content': 1,
     }
     return render(request, 'Home.html', context)
