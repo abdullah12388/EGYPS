@@ -13826,32 +13826,32 @@ input {
 } */
 
 .ads-object1 {
-    width: 27px;
+    width: 22px;
     position: fixed;
-    top: 377px;
-    left: 768px;
-    transform: skewY(0deg);
+    top: 385px;
+    left: 640px;
+    transform: skewY(-12deg);
 }
 .ads-object2 {
-    width: 27px;
+    width: 20px;
     position: fixed;
-    top: 360px;
-    left: 650px;
-    transform: skewY(0deg);
+    top: 374px;
+    left: 544px;
+    transform: skewY(-12deg);
 }
 .ads-object3 {
-    width: 25px;
+    width: 18px;
     position: fixed;
-    top: 348px;
-    left: 554px;
-    transform: skewY(0deg);
+    top: 363px;
+    left: 467px;
+    transform: skewY(-10deg);
 }
 .ads-object4 {
-    width: 24px;
+    width: 16px;
     position: fixed;
-    top: 338px;
-    left: 474px;
-    transform: skewY(0deg);
+    top: 357px;
+    left: 391px;
+    transform: skewY(-10deg);
 }
 
 .nozzile1-popup {
@@ -13862,8 +13862,8 @@ input {
     border-radius: 50%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 485px;
-    left: 590px;
+    top: 466px;
+    left: 488px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13873,15 +13873,15 @@ input {
 
 
 .dispenser-popup {
-    width: 150px;
+    width: 125px;
     /* height: 140px; */
     background-color: #1471b6ad;
     border: 3px solid #f0f0f0;
     border-radius: 3%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 490px;
-    left: 640px;
+    top: 470px;
+    left: 535px;
     /* transform: skewY(-10deg);*/
 }
 
@@ -13899,19 +13899,20 @@ input {
 
 .dispenser-popup-leg1 {
     width: 2px;
-    height: 80px;
+    height: 70px;
     background-color: #f0f0f0;
     border-radius: 5%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
     /* top: 22px; */
     /* left: -13px; */
-    transform: rotate(5deg) translate(82px, -90px);
+    transform: rotate(15deg) translate(50px, -87px);
 }
 
 .dispenser-total {
     color: white;
     margin: 0;
+    text-align: center;
     font-size: 12px;
 }
 
@@ -13924,6 +13925,7 @@ input {
 .dispenser-volume {
     color: white;
     margin: 0;
+    text-align: center;
     font-size: 12px;
 }
 
@@ -13936,6 +13938,7 @@ input {
 .dispenser-unit {
     color: white;
     margin: 0;
+    text-align: center;
     font-size: 12px;
 }
 
@@ -13953,8 +13956,8 @@ input {
     border-radius: 50%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 535px;
-    left: 590px;
+    top: 512px;
+    left: 488px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13964,15 +13967,15 @@ input {
 
 .ads-popup {
     width: 150px;
-    height: 270px;
+    height: 240px;
     /* background-color: #222425b5; */
     background-color: #1471b6ad;
     border: 3px solid #f0f0f0;
     border-radius: 2%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 410px;
-    left: 230px;
+    top: 400px;
+    left: 135px;
     /* transform: skew(-20deg, 6deg);*/
     /* display: flex;
     justify-content: center;
@@ -13993,14 +13996,14 @@ input {
 
 .ads-popup-leg1 {
     width: 2px;
-    height: 300px;
+    height: 283px;
     background-color: #f0f0f0;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
     top: 0px;
     left: 0px;
-    transform: rotate(73deg) translate(-45px, -315px);
+    transform: rotate(73deg) translate(-23px, -301px);
 }
 
 .ads-text {
@@ -14021,8 +14024,8 @@ input {
     border-radius: 2%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: relative;
-    top: 70px;
-    left: 50px;
+    top: 110px;
+    left: 30px;
     /* transform: skewY(-15deg);*/
 }
 
@@ -14052,7 +14055,7 @@ input {
 
 
 .tank1-popup {
-    width: 200px;
+    width: 155px;
     /* height: 140px; */
     /* background-color: #000000cc; */
     background-color: #1471b6ad;
@@ -14060,20 +14063,20 @@ input {
     border-radius: 3%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 500px;
-    left: 1300px;
+    top: 490px;
+    left: 1115px;
 }
 
 .tank1-popup-leg {
     width: 2px;
-    height: 180px;
+    height: 190px;
     background-color: #fefefe;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
     /* top: 22px; */
     /* left: -13px; */
-    transform: rotate(100deg) translate(-80px, 106px);
+    transform: rotate(109deg) translate(-50px, 116px);
 }
 
 .tank1-amount {
@@ -14081,7 +14084,7 @@ input {
 }
 
 .tank2-popup {
-    width: 200px;
+    width: 155px;
     /* height: 140px; */
     /* background-color: #000000cc; */
     background-color: #1471b6ad;
@@ -14089,20 +14092,20 @@ input {
     border-radius: 3%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 600px;
-    left: 1190px;
+    top: 585px;
+    left: 950px;
 }
 
 .tank2-popup-leg {
     width: 2px;
-    height: 302px;
+    height: 210px;
     background-color: #fefefe;
     border-radius: 10%;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: absolute;
     /* top: 22px; */
     /* left: -13px; */
-    transform: rotate(104deg) translate(-145px, 190px);
+    transform: rotate(111deg) translate(-99px, 145px);
 }
 
 .tank2-amount {
@@ -14128,8 +14131,8 @@ input {
     border-radius: 5px;
     box-shadow: 0 0 15px 5px rgb(88 152 210);
     position: fixed;
-    top: 155px;
-    left: 1375px;
+    top: 45px;
+    left: 1119px;
 }
 
 .pos-popup-leg {
@@ -14964,8 +14967,8 @@ input {
     height: 60px;
     background-color: #6c757d8f;
     position: fixed;
-    top: 95px;
-    left: 120px;
+    top: 172px;
+    left: 263px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15007,8 +15010,8 @@ input {
     height: 60px;
     background-color: #6c757d8f;
     position: fixed;
-    top: 75px;
-    left: 300px;
+    top: 158px;
+    left: 440px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15051,8 +15054,8 @@ input {
     height: 60px;
     background-color: #6c757d8f;
     position: fixed;
-    top: 88px;
-    left: 480px;
+    top: 170px;
+    left: 610px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15095,8 +15098,8 @@ input {
     height: 60px;
     background-color: #28a745a1;
     position: fixed;
-    top: 60px;
-    left: 665px;
+    top: 140px;
+    left: 805px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #28a745;
@@ -15139,8 +15142,8 @@ input {
     height: 60px;
     background-color: #0d6efda1;
     position: fixed;
-    top: 70px;
-    left: 840px;
+    top: 155px;
+    left: 970px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;
@@ -15183,8 +15186,8 @@ input {
     height: 60px;
     background-color: #28a745a1;
     position: fixed;
-    top: 100px;
-    left: 1000px;
+    top: 180px;
+    left: 1120px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #28a745;
@@ -15227,8 +15230,8 @@ input {
     height: 60px;
     background-color: #28a745a1;
     position: fixed;
-    top: 415px;
-    left: 1000px;
+    top: 500px;
+    left: 1115px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #28a745;
@@ -15271,8 +15274,8 @@ input {
     height: 60px;
     background-color: #0d6efda1;
     position: fixed;
-    top: 500px;
-    left: 960px;
+    top: 575px;
+    left: 1080px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;
@@ -15315,8 +15318,8 @@ input {
     height: 60px;
     background-color: #0d6efda1;
     position: fixed;
-    top: 590px;
-    left: 910px;
+    top: 654px;
+    left: 1040px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;
@@ -15332,12 +15335,12 @@ input {
 
 .main-popup9-leg {
     /* width: 3px; */
-    height: 210px;
+    height: 190px;
     position: absolute;
     top: 0px;
     left: 0px;
     background-color: #0d6efd;
-    transform: rotate(-46deg) translate(110px, -145px);
+    transform: rotate(-46deg) translate(100px, -130px);
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;
 }
@@ -15347,8 +15350,8 @@ input {
     height: 15px;
     position: absolute;
     border-radius: 50%;
-    top: -157px;
-    left: -110px;
+    top: -141px;
+    left: -98px;
     background-color: #0d6efd;
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;
@@ -15359,8 +15362,8 @@ input {
     height: 60px;
     background-color: #28a745a1;
     position: fixed;
-    top: 590px;
-    left: 740px;
+    top: 645px;
+    left: 883px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #28a745;
@@ -15376,12 +15379,12 @@ input {
 
 .main-popup10-leg {
     /* width: 3px; */
-    height: 180px;
+    height: 150px;
     position: absolute;
     top: 0px;
     left: 0px;
     background-color: #28a745;
-    transform: rotate(-23deg) translate(93px, -150px);
+    transform: rotate(-23deg) translate(75px, -126px);
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #28a745;
 }
@@ -15391,7 +15394,7 @@ input {
     height: 15px;
     position: absolute;
     border-radius: 50%;
-    top: -178px;
+    top: -147px;
     left: -15px;
     background-color: #28a745;
     border: 1px solid #ffffff;
@@ -15403,8 +15406,8 @@ input {
     height: 60px;
     background-color: #6c757d8f;
     position: fixed;
-    top: 580px;
-    left: 590px;
+    top: 650px;
+    left: 735px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15447,8 +15450,8 @@ input {
     height: 60px;
     background-color: #6c757d8f;
     position: fixed;
-    top: 600px;
-    left: 430px;
+    top: 645px;
+    left: 595px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15464,12 +15467,12 @@ input {
 
 .main-popup12-leg {
     /* width: 3px; */
-    height: 177px;
+    height: 150px;
     position: absolute;
     top: 0px;
     left: 0px;
     background-color: #6c757d;
-    transform: rotate(50deg) translate(-28px, -194px);
+    transform: rotate(50deg) translate(-15px, -176px);
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
 }
@@ -15479,8 +15482,8 @@ input {
     height: 15px;
     position: absolute;
     border-radius: 50%;
-    top: -125px;
-    left: 195px;
+    top: -108px;
+    left: 179px;
     background-color: #6c757d;
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15491,8 +15494,8 @@ input {
     height: 60px;
     background-color: #6c757d8f;
     position: fixed;
-    top: 590px;
-    left: 260px;
+    top: 640px;
+    left: 430px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15508,12 +15511,12 @@ input {
 
 .main-popup13-leg {
     /* width: 3px; */
-    height: 325px;
+    height: 275px;
     position: absolute;
     top: 0px;
     left: 0px;
     background-color: #6c757d;
-    transform: rotate(59deg) translate(-108px, -300px);
+    transform: rotate(61deg) translate(-90px, -263px);
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
 }
@@ -15523,8 +15526,8 @@ input {
     height: 15px;
     position: absolute;
     border-radius: 50%;
-    top: -175px;
-    left: 335px;
+    top: -143px;
+    left: 300px;
     background-color: #6c757d;
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #6c757d;
@@ -15535,8 +15538,8 @@ input {
     height: 60px;
     background-color: #28a745a1;
     position: fixed;
-    top: 470px;
-    left: 270px;
+    top: 550px;
+    left: 410px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #28a745;
@@ -15579,8 +15582,8 @@ input {
     height: 60px;
     background-color: #0d6efda1;
     position: fixed;
-    top: 425px;
-    left: 130px;
+    top: 510px;
+    left: 270px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;
@@ -15623,8 +15626,8 @@ input {
     height: 60px;
     background-color: #0d6efda1;
     position: fixed;
-    top: 345px;
-    left: 30px;
+    top: 428px;
+    left: 170px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;
@@ -15684,17 +15687,18 @@ input {
 
 
 .wetstock-summary{
-    color: #000;
-    width: 400px;
+    color: #fff;
+    width: 100%;
     margin: 0 auto 0 auto;
     font-size: 40px;
     font-weight: 400;
     text-shadow: 1px 1px 3px #000;
+    text-align: center;
 }
 
-.cursor {
+/* .cursor {
     border-right: 0.2em solid #000;
-}
+} */
 
 .typing {
     animation: blink-caret 0.75s step-end infinite;
@@ -16399,8 +16403,8 @@ input {
     height: 60px;
     background-color: #0d6efda1;
     position: absolute;
-    top: 400px;
-    left: 35px;
+    top: 510px;
+    left: 266px;
     border-radius: 15px;
     border: 2px solid #ffffff;
     box-shadow: 0px 0px 10px 3px #0d6efd;

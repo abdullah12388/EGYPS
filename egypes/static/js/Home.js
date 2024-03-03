@@ -29,6 +29,9 @@ function connectWebSocket() {
                 if(data.message.group == 'gray'){
                     group_ids = [1,2,3,11,12,13];
                 }
+                if(data.message.group == 'all'){
+                    group_ids = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+                }
                 group_ids.forEach((element)=>{
                     document.getElementById('main-popup'+parseInt(element)).classList.toggle('main-popup-'+parseInt(element)+'-hover');
                 })

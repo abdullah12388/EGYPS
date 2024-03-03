@@ -5,6 +5,11 @@ function showDetails(details_id){
 }
 
 function Up(product) {
+    if(product == '95'){
+        document.getElementById('up92').setAttribute('disabled', 'true');
+    }else{
+        document.getElementById('up95').setAttribute('disabled', 'true');
+    }
     // animation
     document.getElementById('nozzle'+parseInt(product)).classList.add('scale');
     var total = document.getElementById('total'+parseInt(product));
@@ -43,9 +48,11 @@ function Up(product) {
 }
 
 function Down(product) {
+    document.getElementById('up95').removeAttribute('disabled');
+    document.getElementById('up92').removeAttribute('disabled');
     // animation
     document.getElementById('nozzle'+parseInt(product)).classList.remove('scale');
-    // increase
+    // stop
     clearInterval(interval);
     var total = document.getElementById('total'+parseInt(product));
     var amount = document.getElementById('amount'+parseInt(product));

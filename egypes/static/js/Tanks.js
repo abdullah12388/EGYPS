@@ -1,3 +1,12 @@
+document.getElementById('capacity95').addEventListener('change', function (){
+    if(this.value == 0){
+        document.getElementById('capacity95').classList.add('bg-danger', 'text-white');
+        document.getElementById('submit95').setAttribute('disabled', 'true');
+    }else{
+        document.getElementById('capacity95').classList.remove('bg-danger', 'text-white');
+        document.getElementById('submit95').removeAttribute('disabled');
+    }
+});
 document.getElementById('amount95').addEventListener('keyup', function(){
     var capacity = document.getElementById('capacity95');
     if(parseFloat(this.value) <= parseFloat(capacity.value)){
@@ -20,12 +29,24 @@ document.getElementById('delivery95').addEventListener('keyup', function(){
         document.getElementById('fuel95').style = `transform: translateY(${(100-fuel_precentage)}%);transition: all 1s;`;
         document.getElementById('tank_vol_amount95').innerHTML = fuel_precentage.toFixed(2);
         document.getElementById('tank_vol_amount95').style = 'transition: all 1s;';
+        document.getElementById('submitDelivery95').removeAttribute('disabled');
     }else{
         document.getElementById('delivery95').classList.add('bg-danger', 'text-white');
+        document.getElementById('submitDelivery95').setAttribute('disabled', 'true');
         // confirm('Notice: Max Delivery is '+(parseFloat(capacity.value)-parseFloat(amount.value)));
     }
 })
 
+
+document.getElementById('capacity92').addEventListener('change', function (){
+    if(this.value == 0){
+        document.getElementById('capacity92').classList.add('bg-danger', 'text-white');
+        document.getElementById('submit92').setAttribute('disabled', 'true');
+    }else{
+        document.getElementById('capacity92').classList.remove('bg-danger', 'text-white');
+        document.getElementById('submit92').removeAttribute('disabled');
+    }
+});
 
 document.getElementById('amount92').addEventListener('keyup', function(){
     var capacity = document.getElementById('capacity92');
@@ -49,8 +70,10 @@ document.getElementById('delivery92').addEventListener('keyup', function(){
         document.getElementById('fuel92').style = `transform: translateY(${(100-fuel_precentage)}%);transition: all 1s;`;
         document.getElementById('tank_vol_amount92').innerHTML = fuel_precentage.toFixed(2);
         document.getElementById('tank_vol_amount92').style = 'transition: all 1s;';
+        document.getElementById('submitDelivery92').removeAttribute('disabled');
     }else{
         document.getElementById('delivery92').classList.add('bg-danger', 'text-white');
+        document.getElementById('submitDelivery92').setAttribute('disabled', 'true');
         // confirm('Notice: Max Delivery is '+(parseFloat(capacity.value)-parseFloat(amount.value)));
     }
 })
@@ -86,10 +109,12 @@ function deliveryDetails(product){
         var capacity = document.getElementById('capacity95');
         var amount = document.getElementById('amount95');
         var delivery = document.getElementById('delivery95');
+        document.getElementById('submitDelivery95').setAttribute('disabled', 'true');
     }else{
         var capacity = document.getElementById('capacity92');
         var amount = document.getElementById('amount92');
         var delivery = document.getElementById('delivery92');
+        document.getElementById('submitDelivery92').setAttribute('disabled', 'true');
     }
 
     $.ajax({

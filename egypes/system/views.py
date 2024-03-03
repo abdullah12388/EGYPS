@@ -24,11 +24,11 @@ def Home(request):
         'diesel': prices.diesel,
         'cng': prices.cng,
         
-        'amount95': format(tanks.get(product=95).amount, '0.2f'),
-        'precentage95': format(((tanks.get(product=95).amount*100)/tanks.get(product=95).capacity), '0.2f'),
+        'amount95': format(tanks.get(product=95).amount, '0.2f') if tanks.get(product=95).capacity != 0 else 0,
+        'precentage95': format(((tanks.get(product=95).amount*100)/tanks.get(product=95).capacity), '0.2f') if tanks.get(product=95).capacity != 0 else 0,
         
-        'amount92': format(tanks.get(product=92).amount, '0.2f'),
-        'precentage92': format(((tanks.get(product=92).amount*100)/tanks.get(product=92).capacity), '0.2f'),
+        'amount92': format(tanks.get(product=92).amount, '0.2f') if tanks.get(product=92).capacity != 0 else 0,
+        'precentage92': format(((tanks.get(product=92).amount*100)/tanks.get(product=92).capacity), '0.2f') if tanks.get(product=92).capacity != 0 else 0,
         
         'transactions': transactions.filter(status=False),
         't_count': transactions.count(),

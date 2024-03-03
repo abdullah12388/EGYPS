@@ -339,13 +339,13 @@ def Tanks(request):
         'room_name': 'broadcast',
         'capacity95': capacity95,
         'amount95': format(amount95, '0.2f'),
-        'fuel95': 100-(((amount95)*100)/capacity95),
-        'precentage95': format((((amount95)*100)/capacity95), '0.2f'),
+        'fuel95': 100-(((amount95)*100)/capacity95) if capacity95 != 0 else 100,
+        'precentage95': format((((amount95)*100)/capacity95), '0.2f') if capacity95 != 0 else 100,
         
         'capacity92': capacity92,
         'amount92': format(amount92, '0.2f'),
-        'fuel92': 100-(((amount92)*100)/capacity92),
-        'precentage92': format((((amount92)*100)/capacity92), '0.2f'),
+        'fuel92': 100-(((amount92)*100)/capacity92) if capacity92 != 0 else 100,
+        'precentage92': format((((amount92)*100)/capacity92), '0.2f') if capacity92 != 0 else 100,
     }
     return render(request, 'Tanks.html', context)
 
